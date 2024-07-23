@@ -1,0 +1,785 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.tafsirtabari.com/ontology/"
+     xml:base="http://www.tafsirtabari.com/ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:hadith="http://www.semantichadith.com/ontology/">
+    <owl:Ontology rdf:about="http://www.tafsirtabari.com/ontology/">
+        <terms:contributor>Amna binte Kamran</terms:contributor>
+        <terms:creator>Amna Basharat</terms:creator>
+        <terms:description xml:lang="en">The SemanticTafsir ontology is developed to encapsulate and preserve the knowledge from Tafsir, focusing on the Quranic commentary structured within its literary context. This ontology serves as a vocabulary to model  Quranic verses, Tafsir interpretations, and referenced Hadith</terms:description>
+        <terms:license>https://creativecommons.org/licenses/by-sa/4.0/</terms:license>
+        <terms:title>The  Semantic Tafsir Ontology</terms:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#equivalentClass -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentClass"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#equivalentProperty -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/hasPart"/>
+    
+
+
+    <!-- http://schema.org/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/isPartOf">
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/Hadith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/follows -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/follows">
+        <owl:inverseOf rdf:resource="http://www.semantichadith.com/ontology/precedes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/hasHadithText -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/hasHadithText">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/hasPart"/>
+        <rdfs:domain rdf:resource="http://www.semantichadith.com/ontology/Hadith"/>
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/HadithText"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/hasNarrator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/hasNarrator">
+        <owl:inverseOf rdf:resource="http://www.semantichadith.com/ontology/narrated"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semantichadith.com/ontology/hasNarratorChain"/>
+            <rdf:Description rdf:about="http://www.semantichadith.com/ontology/hasNarratorSegment"/>
+            <rdf:Description rdf:about="http://www.semantichadith.com/ontology/refersToNarrator"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/hasNarratorChain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/hasNarratorChain">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/hasPart"/>
+        <rdfs:domain rdf:resource="http://www.semantichadith.com/ontology/Hadith"/>
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/NarratorChain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/hasNarratorSegment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/hasNarratorSegment">
+        <rdfs:domain rdf:resource="http://www.semantichadith.com/ontology/NarratorChain"/>
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/NarratorChainSegment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/hasRootNarrator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/hasRootNarrator">
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/RootNarrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/hasRootNarratorSegment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/hasRootNarratorSegment">
+        <rdfs:domain rdf:resource="http://www.semantichadith.com/ontology/NarratorChain"/>
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/RootNarratorChainSegment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/heardFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/heardFrom">
+        <owl:inverseOf rdf:resource="http://www.semantichadith.com/ontology/transferredTo"/>
+        <rdfs:domain rdf:resource="http://www.semantichadith.com/ontology/HadithNarrator"/>
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/HadithNarrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/narrated -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/narrated"/>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/precedes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/precedes"/>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/refersToNarrator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/refersToNarrator">
+        <rdfs:subPropertyOf rdf:resource="http://www.tafsirtabari.com/ontology/refersTo"/>
+        <rdfs:domain rdf:resource="http://www.semantichadith.com/ontology/NarratorChainSegment"/>
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/HadithNarrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/transferredTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semantichadith.com/ontology/transferredTo">
+        <rdfs:domain rdf:resource="http://www.semantichadith.com/ontology/HadithNarrator"/>
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/HadithNarrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/commentedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/commentedIn">
+        <owl:inverseOf rdf:resource="http://www.tafsirtabari.com/ontology/isAbout"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/Section"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/containsAdd -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/containsAdd">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/hasPart"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/AdditionalText"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/containsCommentary -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/containsCommentary">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/hasPart"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/Commentary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/containsSection -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/containsSection">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/hasPart"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/Section"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/containsSegment -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/containsSegment">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/hasPart"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/Segment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/containsSubSection -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/containsSubSection">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/hasPart"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/SubSection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/containsVerse -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/containsVerse">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/hasPart"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/Verse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/containsVerseFragment -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/containsVerseFragment">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/hasPart"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/VerseFragment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasBookLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/hasBookLocation"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasDatasetLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/hasDatasetLocation"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasLineBeginning -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/hasLineBeginning"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasNarratorType -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/hasNarratorType">
+        <rdfs:domain rdf:resource="http://www.semantichadith.com/ontology/HadithNarrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasNote -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/hasNote"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasSubTheme -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/hasSubTheme">
+        <rdfs:subPropertyOf rdf:resource="http://www.tafsirtabari.com/ontology/hasTheme"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/SubTheme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasTheme -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/hasTheme">
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/Theme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/isAbout -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/isAbout">
+        <rdfs:domain rdf:resource="http://www.tafsirtabari.com/ontology/Section"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/isPartOfHadith -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/isPartOfHadith">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/isPartOf"/>
+        <rdfs:range rdf:resource="http://www.semantichadith.com/ontology/Hadith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/isPartOfVerse -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/isPartOfVerse">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.tafsirtabari.com/ontology/VerseFragment"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/Verse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/isSubThemeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/isSubThemeOf">
+        <rdfs:domain rdf:resource="http://www.tafsirtabari.com/ontology/SubTheme"/>
+        <rdfs:range rdf:resource="http://www.tafsirtabari.com/ontology/Theme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/mentionedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/mentionedIn">
+        <owl:inverseOf rdf:resource="http://www.tafsirtabari.com/ontology/mentions"/>
+        <owl:equivalentProperty>http://quranontology.com/Resource/MentionedIn</owl:equivalentProperty>
+        <owl:equivalentProperty>http://www.semantichadith.com/ontology/mentionedIn</owl:equivalentProperty>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/mentions -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/mentions">
+        <owl:equivalentProperty>http://quranontology.com/Resource/ContainsMentionOf</owl:equivalentProperty>
+        <owl:equivalentProperty>http://schema.org/mentions</owl:equivalentProperty>
+        <owl:equivalentProperty>http://www.semantichadith.com/ontology/containsMentionOf</owl:equivalentProperty>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/references -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/references"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/refersTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.tafsirtabari.com/ontology/refersTo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasChapterNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasChapterNo"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasCommentaryNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasCommentaryNo"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasEdition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasEdition"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasHadithNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasHadithNo"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasID"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasLanguage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasLanguage"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasName"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasPageNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasPageNo"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasReferenceNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasReferenceNo"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasSectionNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasSectionNo"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasSubSectionNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasSubSectionNo"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasSubType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasSubType"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasSurahNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasSurahNo"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasText"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasTime"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasType"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasVerseNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasVerseNo"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/hasVolumeNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tafsirtabari.com/ontology/hasVolumeNo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="http://schema.org/Person">
+        <owl:equivalentClass xml:lang="en">http://dbpedia.org/ontology/Person</owl:equivalentClass>
+        <owl:equivalentClass xml:lang="en">http://quranontology.com/Resource/Person</owl:equivalentClass>
+        <owl:equivalentClass xml:lang="en">https://www.wikidata.org/wiki/Q215627</owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/Hadith -->
+
+    <owl:Class rdf:about="http://www.semantichadith.com/ontology/Hadith"/>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/HadithNarrator -->
+
+    <owl:Class rdf:about="http://www.semantichadith.com/ontology/HadithNarrator">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <terms:description xml:lang="en">Represents a person who is a narrator of a Hadith (راوى).</terms:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/HadithText -->
+
+    <owl:Class rdf:about="http://www.semantichadith.com/ontology/HadithText"/>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/NarratorChain -->
+
+    <owl:Class rdf:about="http://www.semantichadith.com/ontology/NarratorChain"/>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/NarratorChainSegment -->
+
+    <owl:Class rdf:about="http://www.semantichadith.com/ontology/NarratorChainSegment"/>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/RootNarrator -->
+
+    <owl:Class rdf:about="http://www.semantichadith.com/ontology/RootNarrator">
+        <rdfs:subClassOf rdf:resource="http://www.semantichadith.com/ontology/HadithNarrator"/>
+        <terms:description xml:lang="en">The first person to directly hear or witness the contents of a Hadith</terms:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semantichadith.com/ontology/RootNarratorChainSegment -->
+
+    <owl:Class rdf:about="http://www.semantichadith.com/ontology/RootNarratorChainSegment">
+        <rdfs:subClassOf rdf:resource="http://www.semantichadith.com/ontology/NarratorChainSegment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/AdditionalText -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/AdditionalText"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/BookLocation -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/BookLocation"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Commentary -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Commentary"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/DatasetLocation -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/DatasetLocation"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/LineBeginning -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/LineBeginning"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Location -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Location">
+        <owl:equivalentClass xml:lang="en">http://quranontology.com/Resource/Place</owl:equivalentClass>
+        <owl:equivalentClass xml:lang="en">http://schema.org/Place</owl:equivalentClass>
+        <owl:equivalentClass xml:lang="en">https://dbpedia.org/ontology/Place</owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/NarratorType -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/NarratorType"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Note -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Note"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Organization -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Organization"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Other -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Other"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Poetry -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Poetry"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Section -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Section"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Segment -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Segment"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/SubSection -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/SubSection"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/SubTheme -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/SubTheme">
+        <rdfs:subClassOf rdf:resource="http://www.tafsirtabari.com/ontology/Theme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Surah -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Surah"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/TafsirChapter -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/TafsirChapter"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/ThematicVerse -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/ThematicVerse"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/ThematicVerseFragment -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/ThematicVerseFragment"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Theme -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Theme">
+        <owl:equivalentClass xml:lang="en">http://quranontology.com/Resource/Topic</owl:equivalentClass>
+        <owl:equivalentClass xml:lang="en">http://www.semantichadith.com/ontology/Topic</owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Time -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Time"/>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/Verse -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/Verse">
+        <terms:description xml:lang="en">Verse from the Qur&apos;an.</terms:description>
+        <rdfs:label xml:lang="en">Ayah</rdfs:label>
+        <owl:equivalentClass xml:lang="en">http://mlode.nlp2rdf.org/quranvocab#Verse</owl:equivalentClass>
+        <owl:equivalentClass xml:lang="en">http://quranontology.com/Resource/Verse</owl:equivalentClass>
+        <owl:equivalentClass xml:lang="en">http://www.semantichadith.com/ontology/Verse</owl:equivalentClass>
+        <owl:equivalentClass xml:lang="en">https://www.wikidata.org/wiki/Q188219</owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tafsirtabari.com/ontology/VerseFragment -->
+
+    <owl:Class rdf:about="http://www.tafsirtabari.com/ontology/VerseFragment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.org/Person"/>
+            <rdf:Description rdf:about="http://www.semantichadith.com/ontology/Hadith"/>
+            <rdf:Description rdf:about="http://www.semantichadith.com/ontology/HadithText"/>
+            <rdf:Description rdf:about="http://www.semantichadith.com/ontology/NarratorChain"/>
+            <rdf:Description rdf:about="http://www.semantichadith.com/ontology/NarratorChainSegment"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/AdditionalText"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/BookLocation"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Commentary"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/DatasetLocation"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/LineBeginning"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Location"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/NarratorType"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Note"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Organization"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Other"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Poetry"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Section"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Segment"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/SubSection"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Surah"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/TafsirChapter"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/ThematicVerse"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/ThematicVerseFragment"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Theme"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Time"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/Verse"/>
+            <rdf:Description rdf:about="http://www.tafsirtabari.com/ontology/VerseFragment"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
