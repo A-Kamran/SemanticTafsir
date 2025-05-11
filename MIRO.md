@@ -89,7 +89,7 @@ Hierarchical (rdfs:subClassOf), compositional (schema:hasPart), and referential 
 Design patterns include domain and range constraints, class disjointness, and existential quantification for key properties.
 
 11. **Deferencable URI (OPTIONAL)** 
-URIs follow a dereferenceable structure, and hosted [here](www.semantichadith.iknex.com)
+URIs follow a dereferenceable structure, and hosted [here](http://www.semantichadith.iknex.com)
 
 
 ## F. Managing change
