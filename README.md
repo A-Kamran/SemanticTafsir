@@ -1,2 +1,2 @@
-### Semantic Tafsir Ontology Documentation
+# Semantic Tafsir Ontology Documentation
 
