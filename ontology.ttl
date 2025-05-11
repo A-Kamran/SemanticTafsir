@@ -1,0 +1,615 @@
+@prefix : <http://www.semantictafsir.com/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semantictafsir.com/ontology/> .
+
+<http://www.semantictafsir.com/ontology/> rdf:type owl:Ontology ;
+                                           <http://purl.org/dc/terms/creator> "Amna Basharat" ,
+                                                                              "Amna binte Kamran" ;
+                                           <http://purl.org/dc/terms/description> "The SemanticTafsir ontology is developed to encapsulate and preserve the knowledge from Tafsir, focusing on the Quranic commentary structured within its literary context. This ontology serves as a vocabulary to model  Quranic verses, Tafsir interpretations, and referenced Hadith"@en ;
+                                           <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by-sa/4.0/" ;
+                                           <http://purl.org/dc/terms/title> "The  Semantic Tafsir Ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#equivalentClass
+owl:equivalentClass rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#equivalentProperty
+owl:equivalentProperty rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://schema.org/hasPart
+<http://schema.org/hasPart> rdf:type owl:ObjectProperty ;
+                            rdfs:comment "A general property indicating that an entity is composed of other entities, used to organize content within the ontology."@en .
+
+
+###  http://schema.org/isPartOf
+<http://schema.org/isPartOf> rdf:type owl:ObjectProperty ;
+                             rdfs:range <http://www.semantichadith.com/ontology/Hadith> ;
+                             rdfs:comment "Indicates that an entity is a component of a larger entity, used to establish part-whole relationships."@en .
+
+
+###  http://www.semantichadith.com/ontology/follows
+<http://www.semantichadith.com/ontology/follows> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <http://www.semantichadith.com/ontology/precedes> ;
+                                                 rdfs:comment "follows Establishes a sequential relationship where one entity like a segment or a section follows another within the text."@en .
+
+
+###  http://www.semantichadith.com/ontology/hasHadithText
+<http://www.semantichadith.com/ontology/hasHadithText> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf <http://schema.org/hasPart> ;
+                                                       rdfs:domain <http://www.semantichadith.com/ontology/Hadith> ;
+                                                       rdfs:range <http://www.semantichadith.com/ontology/HadithText> ;
+                                                       rdfs:comment "Connects a Hadith entity to its textual content."@en .
+
+
+###  http://www.semantichadith.com/ontology/hasNarrator
+<http://www.semantichadith.com/ontology/hasNarrator> rdf:type owl:ObjectProperty ;
+                                                     owl:inverseOf <http://www.semantichadith.com/ontology/narrated> ;
+                                                     owl:propertyChainAxiom ( <http://www.semantichadith.com/ontology/hasNarratorChain>
+                                                                              <http://www.semantichadith.com/ontology/hasNarratorSegment>
+                                                                              <http://www.semantichadith.com/ontology/refersToNarrator>
+                                                                            ) ;
+                                                     rdfs:comment "Links a Hadith or commentary to the person who narrated it, forming part of the chain of transmission."@en .
+
+
+###  http://www.semantichadith.com/ontology/hasNarratorChain
+<http://www.semantichadith.com/ontology/hasNarratorChain> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf <http://schema.org/hasPart> ;
+                                                          rdfs:domain <http://www.semantichadith.com/ontology/Hadith> ;
+                                                          rdfs:range <http://www.semantichadith.com/ontology/NarratorChain> ;
+                                                          rdfs:comment "Links a Hadith to its entire chain of narrators, providing a complete view of its transmission history."@en .
+
+
+###  http://www.semantichadith.com/ontology/hasNarratorSegment
+<http://www.semantichadith.com/ontology/hasNarratorSegment> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <http://www.semantichadith.com/ontology/NarratorChain> ;
+                                                            rdfs:range <http://www.semantichadith.com/ontology/NarratorChainSegment> ;
+                                                            rdfs:comment "Connects a Hadith to a segment of the narrator chain, allowing for detailed tracking of the transmission process."@en .
+
+
+###  http://www.semantichadith.com/ontology/hasRootNarrator
+<http://www.semantichadith.com/ontology/hasRootNarrator> rdf:type owl:ObjectProperty ;
+                                                         rdfs:range <http://www.semantichadith.com/ontology/RootNarrator> ;
+                                                         rdfs:comment "Connects a Hadith to its root narrator, the earliest source in the chain of transmission"@en .
+
+
+###  http://www.semantichadith.com/ontology/hasRootNarratorSegment
+<http://www.semantichadith.com/ontology/hasRootNarratorSegment> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <http://www.semantichadith.com/ontology/NarratorChain> ;
+                                                                rdfs:range <http://www.semantichadith.com/ontology/RootNarratorChainSegment> ;
+                                                                rdfs:comment "Links a Hadith to the initial segment of its narrator chain, starting from the root narrator"@en .
+
+
+###  http://www.semantichadith.com/ontology/heardFrom
+<http://www.semantichadith.com/ontology/heardFrom> rdf:type owl:ObjectProperty ;
+                                                   owl:inverseOf <http://www.semantichadith.com/ontology/transferredTo> ;
+                                                   rdfs:domain <http://www.semantichadith.com/ontology/HadithNarrator> ;
+                                                   rdfs:range <http://www.semantichadith.com/ontology/HadithNarrator> ;
+                                                   rdfs:comment "Indicates the source from which a narrator heard the Hadith, typically another narrator in the chain."@en .
+
+
+###  http://www.semantichadith.com/ontology/narrated
+<http://www.semantichadith.com/ontology/narrated> rdf:type owl:ObjectProperty ;
+                                                  rdfs:comment "Connects a narrator to the Hadith or text they transmitted."@en .
+
+
+###  http://www.semantichadith.com/ontology/precedes
+<http://www.semantichadith.com/ontology/precedes> rdf:type owl:ObjectProperty ;
+                                                  rdfs:comment "Establishes that one text or segment comes before another, used to maintain the order of content in the ontology."@en .
+
+
+###  http://www.semantichadith.com/ontology/refersToNarrator
+<http://www.semantichadith.com/ontology/refersToNarrator> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf :refersTo ;
+                                                          rdfs:domain <http://www.semantichadith.com/ontology/NarratorChainSegment> ;
+                                                          rdfs:range <http://www.semantichadith.com/ontology/HadithNarrator> ;
+                                                          rdfs:comment "Specifically links a text to a particular narrator referenced within it."@en .
+
+
+###  http://www.semantichadith.com/ontology/transferredTo
+<http://www.semantichadith.com/ontology/transferredTo> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://www.semantichadith.com/ontology/HadithNarrator> ;
+                                                       rdfs:range <http://www.semantichadith.com/ontology/HadithNarrator> ;
+                                                       rdfs:comment "Captures the transfer of knowledge, narration, or content from one entity to another, such as the passing of narration from one scholar to another"@en .
+
+
+###  http://www.semantictafsir.com/ontology/commentedIn
+:commentedIn rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isAbout ;
+             rdfs:range :Section ;
+             rdfs:comment "Indicates that a specific verse or passage is commented on within a particular section of the Tafsir."@en .
+
+
+###  http://www.semantictafsir.com/ontology/containsAdditionalText
+:containsAdditionalText rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://schema.org/hasPart> ;
+                        rdfs:range :AdditionalText ;
+                        rdfs:comment "Specifies that an entity includes additional text or annotation, often used for footnotes or marginalia."@en .
+
+
+###  http://www.semantictafsir.com/ontology/containsCommentary
+:containsCommentary rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://schema.org/hasPart> ;
+                    rdfs:range :Commentary ;
+                    rdfs:comment "Indicates that an entity includes commentary, typically linked to a Quranic verse or thematic discussion."@en .
+
+
+###  http://www.semantictafsir.com/ontology/containsSection
+:containsSection rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://schema.org/hasPart> ;
+                 rdfs:range :Section ;
+                 rdfs:comment "Associates a higher-level entity (e.g., a chapter) with one of its sections."@en .
+
+
+###  http://www.semantictafsir.com/ontology/containsSegment
+:containsSegment rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://schema.org/hasPart> ;
+                 rdfs:range :Segment ;
+                 rdfs:comment "Links a section to one of its smaller segments, reflecting the breakdown of the content into manageable parts."@en .
+
+
+###  http://www.semantictafsir.com/ontology/containsSubSection
+:containsSubSection rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://schema.org/hasPart> ;
+                    rdfs:range :SubSection ;
+                    rdfs:comment "Indicates that a section is further divided into subsections, used for detailed organisational structure."@en .
+
+
+###  http://www.semantictafsir.com/ontology/containsVerse
+:containsVerse rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://schema.org/hasPart> ;
+               rdfs:range :Verse ;
+               rdfs:comment "Connects a Tafsir or commentary to the specific Quranic verse it interprets or explains."@en .
+
+
+###  http://www.semantictafsir.com/ontology/containsVerseFragment
+:containsVerseFragment rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf <http://schema.org/hasPart> ;
+                       rdfs:range :VerseFragment ;
+                       rdfs:comment "Links a commentary or note to a specific fragment of a Quranic verse, allowing for granular analysis."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasBookLocation
+:hasBookLocation rdf:type owl:ObjectProperty ;
+                 rdfs:comment "Links an entity to its corresponding book location, indicating where the text can be found within a physical or digital book."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasDatasetLocation
+:hasDatasetLocation rdf:type owl:ObjectProperty ;
+                    rdfs:comment "Connects an entity to the dataset’s location, often used to reference the source of data or annotations."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasLineBeginning
+:hasLineBeginning rdf:type owl:ObjectProperty ;
+                  rdfs:comment "Associates a segment of text with the beginning of a line, important for preserving the structure of the text as presented in the original manuscript."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasNarratorType
+:hasNarratorType rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://www.semantichadith.com/ontology/HadithNarrator> ;
+                 rdfs:comment "Specifies the type of narrator, such as whether they are a primary source or a secondary transmitter in the chain of narration"@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasNote
+:hasNote rdf:type owl:ObjectProperty ;
+         rdfs:comment "Links a piece of text to a corresponding note or annotation, providing additional context or explanation."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasSubTheme
+:hasSubTheme rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasTheme ;
+             rdfs:range :SubTheme ;
+             rdfs:comment "Connects a theme to its sub-themes, providing a more detailed categorisation within a broader thematic area"@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasTheme
+:hasTheme rdf:type owl:ObjectProperty ;
+          rdfs:range :Theme ;
+          rdfs:comment "Associates a verse, segment, or commentary with a broader thematic concept, allowing for thematic organization within the ontology."@en .
+
+
+###  http://www.semantictafsir.com/ontology/isAbout
+:isAbout rdf:type owl:ObjectProperty ;
+         rdfs:domain :Section ;
+         rdfs:comment "Describes the subject matter or focus of a commentary or note, linking it to the relevant verse."@en .
+
+
+###  http://www.semantictafsir.com/ontology/isPartOfHadith
+:isPartOfHadith rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://schema.org/isPartOf> ;
+                rdfs:range <http://www.semantichadith.com/ontology/Hadith> ;
+                rdfs:comment "Specifies that an entity is part of a Hadith, such as a segment of the narrator chain."@en .
+
+
+###  http://www.semantictafsir.com/ontology/isPartOfVerse
+:isPartOfVerse rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://schema.org/isPartOf> ;
+               rdfs:domain :VerseFragment ;
+               rdfs:range :Verse ;
+               rdfs:comment "Connects a verse fragment to the full verse it is part of."@en .
+
+
+###  http://www.semantictafsir.com/ontology/isSubThemeOf
+:isSubThemeOf rdf:type owl:ObjectProperty ;
+              rdfs:domain :SubTheme ;
+              rdfs:range :Theme ;
+              rdfs:comment "Establishes a relationship where a sub-theme is part of a larger theme, reflecting the hierarchical structure of thematic categorization"@en .
+
+
+###  http://www.semantictafsir.com/ontology/mentionedIn
+:mentionedIn rdf:type owl:ObjectProperty ;
+             owl:inverseOf :mentions ;
+             rdfs:comment "Links an entity (e.g., person, place, or concept) to the specific text where it is mentioned."@en ;
+             owl:equivalentProperty "http://quranontology.com/Resource/MentionedIn" ,
+                                    "http://www.semantichadith.com/ontology/mentionedIn" .
+
+
+###  http://www.semantictafsir.com/ontology/mentions
+:mentions rdf:type owl:ObjectProperty ;
+          rdfs:comment "Indicates that a text or commentary references a particular entity, such as a person or concept."@en ;
+          owl:equivalentProperty "http://quranontology.com/Resource/ContainsMentionOf" ,
+                                 "http://schema.org/mentions" ,
+                                 "http://www.semantichadith.com/ontology/containsMentionOf" .
+
+
+###  http://www.semantictafsir.com/ontology/references
+:references rdf:type owl:ObjectProperty ;
+            rdfs:comment "Links a text or commentary to another text it references, showing the relationship between different parts of the literature."@en .
+
+
+###  http://www.semantictafsir.com/ontology/refersTo
+:refersTo rdf:type owl:ObjectProperty ;
+          rdfs:comment "Indicates a relationship where one text refers to another, such as a Tafsir referencing a Quranic verse or Hadith"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semantictafsir.com/ontology/hasChapterNo
+:hasChapterNo rdf:type owl:DatatypeProperty ;
+              rdfs:comment "Specifies the chapter number within a Tafsir, used to organize and reference specific chapters." .
+
+
+###  http://www.semantictafsir.com/ontology/hasCommentaryNo
+:hasCommentaryNo rdf:type owl:DatatypeProperty ;
+                 rdfs:comment "Represents the number assigned to a particular commentary within a chapter or section, allowing for easy identification"@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasEdition
+:hasEdition rdf:type owl:DatatypeProperty ;
+            rdfs:comment "Captures the edition number or details of a specific version of a text or Tafsir, useful for referencing different editions"@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasHadithNo
+:hasHadithNo rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Indicates the number assigned to a Hadith within a collection, facilitating retrieval and cross-referencing"@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasID
+:hasID rdf:type owl:DatatypeProperty ;
+       rdfs:comment "A unique identifier assigned to an entity within the ontology, ensuring each entity can be distinctly referenced"@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasLanguage
+:hasLanguage rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Denotes the language in which a text, commentary, or note is written, supporting multilingual representations."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:comment "Represents the name of an entity, such as a person, location, or theme, providing a human-readable label."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasPageNo
+:hasPageNo rdf:type owl:DatatypeProperty ;
+           rdfs:comment "Indicates the page number where a text or commentary can be found, useful for referencing specific locations within a physical or digital book."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasReferenceNo
+:hasReferenceNo rdf:type owl:DatatypeProperty ;
+                rdfs:comment "Specifies a reference number used for citing or linking to other texts, annotations, or scholarly works"@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasSectionNo
+:hasSectionNo rdf:type owl:DatatypeProperty ;
+              rdfs:comment "Represents the section number within a chapter, used for organising and navigating the content."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasSubSectionNo
+:hasSubSectionNo rdf:type owl:DatatypeProperty ;
+                 rdfs:comment "Indicates the subsection number within a section, allowing for more granular categorisation of content."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasSubType
+:hasSubType rdf:type owl:DatatypeProperty ;
+            rdfs:comment "Captures the subtype of an entity, providing additional classification details beyond the primary type."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasSurahNo
+:hasSurahNo rdf:type owl:DatatypeProperty ;
+            rdfs:comment "Specifies the Surah (chapter) number from the Quran that is being interpreted or referenced in the Tafsir"@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasText
+:hasText rdf:type owl:DatatypeProperty ;
+         rdfs:comment "Contains the actual text content of an entity, such as the full text of a verse, commentary, or annotation."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasTime
+:hasTime rdf:type owl:DatatypeProperty ;
+         rdfs:comment "Represents temporal information, such as the date or period associated with an event or narration."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasType
+:hasType rdf:type owl:DatatypeProperty ;
+         rdfs:comment "Indicates the type or category of an entity, used to classify and organise different elements within the ontology"@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasVerseNo
+:hasVerseNo rdf:type owl:DatatypeProperty ;
+            rdfs:comment "Specifies the verse number from the Quran, used to reference specific verses within the text."@en .
+
+
+###  http://www.semantictafsir.com/ontology/hasVolumeNo
+:hasVolumeNo rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Captures the volume number within a multi-volume work, aiding in the identification and location of content across volumes"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class ;
+                           rdfs:comment """Represents any individual mentioned in the Tafsir, either historical or contemporary. Naming can be a complex process in classical Arab society (comparable to ancient Hebraic naming) (Almuhanna and Prunet, 2019). Full names are made of chains of single names, which can include the name of
+the city where the person was living. Once the full name is mentioned, short forms are usually used throughout the remainder of a text (e.g. Al-Tabari)"""@en ;
+                           owl:equivalentClass "http://dbpedia.org/ontology/Person" ,
+                                               "http://quranontology.com/Resource/Person" ,
+                                               "https://www.wikidata.org/entity/Q215627" .
+
+
+###  http://www.semantichadith.com/ontology/Hadith
+<http://www.semantichadith.com/ontology/Hadith> rdf:type owl:Class ;
+                                                rdfs:comment "Represents Hadith narrations referenced in the Tafsir to provide context or explanation of Quranic verses."@en .
+
+
+###  http://www.semantichadith.com/ontology/HadithNarrator
+<http://www.semantichadith.com/ontology/HadithNarrator> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://schema.org/Person> ;
+                                                        <http://purl.org/dc/terms/description> "Represents a person who is a narrator of a Hadith (راوى)."@en ;
+                                                        rdfs:comment "A subclass of Person, specifically representing narrators of Hadith."@en .
+
+
+###  http://www.semantichadith.com/ontology/HadithText
+<http://www.semantichadith.com/ontology/HadithText> rdf:type owl:Class ;
+                                                    rdfs:comment "Refers to the text of a Hadith itself, distinct from its chain of Narrators etc"@en .
+
+
+###  http://www.semantichadith.com/ontology/NarratorChain
+<http://www.semantichadith.com/ontology/NarratorChain> rdf:type owl:Class ;
+                                                       rdfs:comment "Captures the chain of narrators associated with a Hadith, documenting the transmission lineage."@en .
+
+
+###  http://www.semantichadith.com/ontology/NarratorChainSegment
+<http://www.semantichadith.com/ontology/NarratorChainSegment> rdf:type owl:Class ;
+                                                              rdfs:comment "Represents segments of the narrator chain, allowing for detailed tracking of transmission paths."@en .
+
+
+###  http://www.semantichadith.com/ontology/RootNarrator
+<http://www.semantichadith.com/ontology/RootNarrator> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.semantichadith.com/ontology/HadithNarrator> ;
+                                                      <http://purl.org/dc/terms/description> "The first person to directly hear or witness the contents of a Hadith"@en ;
+                                                      rdfs:comment "The earliest known narrator in a Hadith chain, often a companion of the Prophet."@en .
+
+
+###  http://www.semantichadith.com/ontology/RootNarratorChainSegment
+<http://www.semantichadith.com/ontology/RootNarratorChainSegment> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.semantichadith.com/ontology/NarratorChainSegment> ;
+                                                                  rdfs:comment "The initial segment of a narrator chain, starting from the earliest source."@en .
+
+
+###  http://www.semantictafsir.com/ontology/AdditionalText
+:AdditionalText rdf:type owl:Class ;
+                rdfs:comment "Represents any additional text that complements the main content, such as footnotes or marginalia."@en .
+
+
+###  http://www.semantictafsir.com/ontology/BookLocation
+:BookLocation rdf:type owl:Class ;
+              rdfs:comment "Represents the page and volume of the Tafsir contents in the physical editions of Tafsir Collections"@en .
+
+
+###  http://www.semantictafsir.com/ontology/Commentary
+:Commentary rdf:type owl:Class ;
+            rdfs:comment "Represents the interpretative commentary of the scholars provided in the Tafsir, linked to specific verses or themes"@en .
+
+
+###  http://www.semantictafsir.com/ontology/DatasetLocation
+:DatasetLocation rdf:type owl:Class ;
+                 rdfs:comment "Specifies the location of content within the digital data."@en .
+
+
+###  http://www.semantictafsir.com/ontology/LineBeginning
+:LineBeginning rdf:type owl:Class ;
+               rdfs:comment "Marks the beginning of a new line in the text, used for precise text alignment."@en .
+
+
+###  http://www.semantictafsir.com/ontology/Location
+:Location rdf:type owl:Class ;
+          rdfs:comment "General class for representing any geographical or contextual location mentioned in the Tafsir. Location names are mostly straightforward (either classical Arabic names, or names going back to the ancient age of Babylonia). Sometimes, their semantics are ambiguous, e.g. the word Medina (city) is not a Proper Noun, however, when it is used in a short form for Medina Al Munawwarah (\"The Enlightened City\"), then it becomes a Proper Noun. The word’s meaning is highly context-dependent."@en ;
+          owl:equivalentClass "http://quranontology.com/Resource/Place" ,
+                              "http://schema.org/Place" ,
+                              "https://dbpedia.org/ontology/Place" .
+
+
+###  http://www.semantictafsir.com/ontology/NarratorType
+:NarratorType rdf:type owl:Class ;
+              rdfs:comment "Categorises narrators based on their role or reliability in the chain of transmission. Denotes the role or classification of a narrator in the transmission of Tafsir content, including types such as Qari (reciter), Rawi (narrator), Sahabi (companion of the Prophet), Shaykh (learned authority), and Unknown_Rawi (unidentified narrator)."@en .
+
+
+###  http://www.semantictafsir.com/ontology/Note
+:Note rdf:type owl:Class ;
+      rdfs:comment "Contains any notes or annotations made by the author or scholars regarding the text."@en .
+
+
+###  http://www.semantictafsir.com/ontology/Organization
+:Organization rdf:type owl:Class ;
+              rdfs:comment "Refers to the extended modern definition of this class to the classical context of religious organizations (Jews, Christians, Muslims), their subgroups (Sunni, Shia, Ismailities), theological school of thoughts (Hanafi, Maliki, Shafi’i, Hanbali), tribes and clans (Hashim, Quraysh), and ethnic groups (Arabs, Greeks, Persians)."@en .
+
+
+###  http://www.semantictafsir.com/ontology/Other
+:Other rdf:type owl:Class ;
+       rdfs:comment "A general class for any miscellaneous or uncategorised elements in the Tafsir, such as the name of languages (Arabic, Greek, Latin), angels (Gabriel, Michael, Raphael), and (polytheistic) deities (Al-Uzza, Al-Lat, Manat, Baa)"@en .
+
+
+###  http://www.semantictafsir.com/ontology/Poetry
+:Poetry rdf:type owl:Class ;
+        rdfs:comment "Represents poetic verses or stanzas referenced within the Tafsir."@en .
+
+
+###  http://www.semantictafsir.com/ontology/Section
+:Section rdf:type owl:Class ;
+         rdfs:comment "A major division within the Tafsir, often corresponding to significant thematic breaks."@en .
+
+
+###  http://www.semantictafsir.com/ontology/Segment
+:Segment rdf:type owl:Class ;
+         rdfs:comment "Represents a smaller portion of a section, focusing on specific verses or themes."@en .
+
+
+###  http://www.semantictafsir.com/ontology/SubSection
+:SubSection rdf:type owl:Class ;
+            rdfs:comment "A subdivision within a section, allowing for detailed thematic or topical breakdowns."@en .
+
+
+###  http://www.semantictafsir.com/ontology/SubTheme
+:SubTheme rdf:type owl:Class ;
+          rdfs:subClassOf :Theme ;
+          rdfs:comment "Subdivides the main themes into more specific topics for detailed analysis."@en .
+
+
+###  http://www.semantictafsir.com/ontology/Surah
+:Surah rdf:type owl:Class ;
+       rdfs:comment "Represents a chapter of the Quran, which is the primary text being interpreted in the Tafsir."@en ;
+       owl:equivalentClass "http://mlode.nlp2rdf.org/quranvocab#Chapter" ,
+                           "http://quranontology.com/Resource/Chapter" .
+
+
+###  http://www.semantictafsir.com/ontology/TafsirChapter
+:TafsirChapter rdf:type owl:Class ;
+               rdfs:comment "Denotes a chapter within the Tafsir, organising the commentary into sections. Usually corresponds to the Surahs of the Quran."@en .
+
+
+###  http://www.semantictafsir.com/ontology/TafsirCollection
+:TafsirCollection rdf:type owl:Class ;
+                  rdfs:comment "Represents the entire compilation of Tafsir works, encompassing all chapters, sections, and interpretations within a particular edition or collection of Tafsir literature. This class organises the Tafsir content as a cohesive set, providing a structured framework for accessing and analysing the exegesis as a whole."@en .
+
+
+###  http://www.semantictafsir.com/ontology/ThematicVerseFragmentReference
+:ThematicVerseFragmentReference rdf:type owl:Class ;
+                                rdfs:comment "Refers to a specific fragment of a thematic verse that is analysed in detail within the Tafsir, providing a focused interpretation of that segment."@en .
+
+
+###  http://www.semantictafsir.com/ontology/ThematicVerseReference
+:ThematicVerseReference rdf:type owl:Class ;
+                        rdfs:comment "Represents a Quranic verse that has been identified as thematically significant within the Tafsir, highlighting its relevance to specific themes or concepts."@en .
+
+
+###  http://www.semantictafsir.com/ontology/Theme
+:Theme rdf:type owl:Class ;
+       rdfs:comment "Captures the major themes identified in the Tafsir, organizing the content around key concepts."@en ;
+       owl:equivalentClass "http://quranontology.com/Resource/Topic" ,
+                           "http://www.semantichadith.com/ontology/Topic" .
+
+
+###  http://www.semantictafsir.com/ontology/Time
+:Time rdf:type owl:Class ;
+      rdfs:comment """Represents temporal information mentioned in the Tafsir, such as historical periods or specific dates. In the early 7th century, the moon calendar was still in its primary form, hence there was not a proper usage of numerical format like in our modern days. Therefore, dates were mostly written out in
+words, either only by day name, or sometimes including the month name, and rarely, the year. Also well-known temporal entities, such as the Day of Judgment (Youm Al-Din)."""@en .
+
+
+###  http://www.semantictafsir.com/ontology/Verse
+:Verse rdf:type owl:Class ;
+       <http://purl.org/dc/terms/description> "Verse from the Qur'an."@en ;
+       rdfs:comment "Refers to a specific verse of the Quran that is the subject of interpretation."@en ;
+       rdfs:label "Ayah"@en ;
+       owl:equivalentClass "http://mlode.nlp2rdf.org/quranvocab#Vers" ,
+                           "http://quranontology.com/Resource/Verse" ,
+                           "http://www.semantichadith.com/ontology/Verse" ,
+                           "https://www.wikidata.org/entity/Q188219" .
+
+
+###  http://www.semantictafsir.com/ontology/VerseFragment
+:VerseFragment rdf:type owl:Class ;
+               rdfs:comment "A part of a Quranic verse that is individually analysed or referenced in the Tafsir."@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://schema.org/Person>
+                <http://www.semantichadith.com/ontology/Hadith>
+                <http://www.semantichadith.com/ontology/HadithText>
+                <http://www.semantichadith.com/ontology/NarratorChain>
+                <http://www.semantichadith.com/ontology/NarratorChainSegment>
+                :AdditionalText
+                :BookLocation
+                :Commentary
+                :DatasetLocation
+                :LineBeginning
+                :Location
+                :NarratorType
+                :Note
+                :Organization
+                :Other
+                :Poetry
+                :Section
+                :Segment
+                :SubSection
+                :Surah
+                :TafsirChapter
+                :ThematicVerseFragmentReference
+                :ThematicVerseReference
+                :Theme
+                :Time
+                :Verse
+                :VerseFragment
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

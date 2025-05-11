@@ -1,0 +1,943 @@
+[ {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "http://schema.org/Person"
+    }, {
+      "@id" : "http://www.semantichadith.com/ontology/Hadith"
+    }, {
+      "@id" : "http://www.semantichadith.com/ontology/HadithText"
+    }, {
+      "@id" : "http://www.semantichadith.com/ontology/NarratorChain"
+    }, {
+      "@id" : "http://www.semantichadith.com/ontology/NarratorChainSegment"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/AdditionalText"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/BookLocation"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Commentary"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/DatasetLocation"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/LineBeginning"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Location"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/NarratorType"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Note"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Organization"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Other"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Poetry"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Section"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Segment"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/SubSection"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Surah"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/TafsirChapter"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/ThematicVerseFragmentReference"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/ThematicVerseReference"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Theme"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Time"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/Verse"
+    }, {
+      "@id" : "http://www.semantictafsir.com/ontology/VerseFragment"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/contributor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://schema.org/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents any individual mentioned in the Tafsir, either historical or contemporary. Naming can be a complex process in classical Arab society (comparable to ancient Hebraic naming) (Almuhanna and Prunet, 2019). Full names are made of chains of single names, which can include the name of\nthe city where the person was living. Once the full name is mentioned, short forms are usually used throughout the remainder of a text (e.g. Al-Tabari)"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "http://dbpedia.org/ontology/Person"
+  }, {
+    "@value" : "http://quranontology.com/Resource/Person"
+  }, {
+    "@value" : "https://www.wikidata.org/entity/Q215627"
+  } ]
+}, {
+  "@id" : "http://schema.org/hasPart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A general property indicating that an entity is composed of other entities, used to organize content within the ontology."
+  } ]
+}, {
+  "@id" : "http://schema.org/isPartOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates that an entity is a component of a larger entity, used to establish part-whole relationships."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/Hadith"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/Hadith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents Hadith narrations referenced in the Tafsir to provide context or explanation of Quranic verses."
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/HadithNarrator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Represents a person who is a narrator of a Hadith (راوى)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A subclass of Person, specifically representing narrators of Hadith."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/Person"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/HadithText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Refers to the text of a Hadith itself, distinct from its chain of Narrators etc"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/NarratorChain",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Captures the chain of narrators associated with a Hadith, documenting the transmission lineage."
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/NarratorChainSegment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents segments of the narrator chain, allowing for detailed tracking of transmission paths."
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/RootNarrator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The first person to directly hear or witness the contents of a Hadith"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The earliest known narrator in a Hadith chain, often a companion of the Prophet."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/HadithNarrator"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/RootNarratorChainSegment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The initial segment of a narrator chain, starting from the earliest source."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/NarratorChainSegment"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/follows",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "follows Establishes a sequential relationship where one entity like a segment or a section follows another within the text."
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/precedes"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/hasHadithText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a Hadith entity to its textual content."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/Hadith"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/HadithText"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/hasPart"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/hasNarrator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a Hadith or commentary to the person who narrated it, forming part of the chain of transmission."
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/narrated"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "http://www.semantichadith.com/ontology/hasNarratorChain"
+    }, {
+      "@id" : "http://www.semantichadith.com/ontology/hasNarratorSegment"
+    }, {
+      "@id" : "http://www.semantichadith.com/ontology/refersToNarrator"
+    } ]
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/hasNarratorChain",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a Hadith to its entire chain of narrators, providing a complete view of its transmission history."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/Hadith"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/NarratorChain"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/hasPart"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/hasNarratorSegment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a Hadith to a segment of the narrator chain, allowing for detailed tracking of the transmission process."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/NarratorChain"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/NarratorChainSegment"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/hasRootNarrator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a Hadith to its root narrator, the earliest source in the chain of transmission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/RootNarrator"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/hasRootNarratorSegment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a Hadith to the initial segment of its narrator chain, starting from the root narrator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/NarratorChain"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/RootNarratorChainSegment"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/heardFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates the source from which a narrator heard the Hadith, typically another narrator in the chain."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/HadithNarrator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/HadithNarrator"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/transferredTo"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/narrated",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a narrator to the Hadith or text they transmitted."
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/precedes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Establishes that one text or segment comes before another, used to maintain the order of content in the ontology."
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/refersToNarrator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifically links a text to a particular narrator referenced within it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/NarratorChainSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/HadithNarrator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/refersTo"
+  } ]
+}, {
+  "@id" : "http://www.semantichadith.com/ontology/transferredTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Captures the transfer of knowledge, narration, or content from one entity to another, such as the passing of narration from one scholar to another"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/HadithNarrator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/HadithNarrator"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "Amna Basharat"
+  }, {
+    "@value" : "Amna binte Kamran"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The SemanticTafsir ontology is developed to encapsulate and preserve the knowledge from Tafsir, focusing on the Quranic commentary structured within its literary context. This ontology serves as a vocabulary to model  Quranic verses, Tafsir interpretations, and referenced Hadith"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@value" : "https://creativecommons.org/licenses/by-sa/4.0/"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@value" : "The  Semantic Tafsir Ontology"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/AdditionalText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents any additional text that complements the main content, such as footnotes or marginalia."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/BookLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the page and volume of the Tafsir contents in the physical editions of Tafsir Collections"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Commentary",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the interpretative commentary of the scholars provided in the Tafsir, linked to specific verses or themes"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/DatasetLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the location of content within the digital data."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/LineBeginning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Marks the beginning of a new line in the text, used for precise text alignment."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "General class for representing any geographical or contextual location mentioned in the Tafsir. Location names are mostly straightforward (either classical Arabic names, or names going back to the ancient age of Babylonia). Sometimes, their semantics are ambiguous, e.g. the word Medina (city) is not a Proper Noun, however, when it is used in a short form for Medina Al Munawwarah (\"The Enlightened City\"), then it becomes a Proper Noun. The word’s meaning is highly context-dependent."
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "http://quranontology.com/Resource/Place"
+  }, {
+    "@value" : "http://schema.org/Place"
+  }, {
+    "@value" : "https://dbpedia.org/ontology/Place"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/NarratorType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Categorises narrators based on their role or reliability in the chain of transmission. Denotes the role or classification of a narrator in the transmission of Tafsir content, including types such as Qari (reciter), Rawi (narrator), Sahabi (companion of the Prophet), Shaykh (learned authority), and Unknown_Rawi (unidentified narrator)."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Note",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Contains any notes or annotations made by the author or scholars regarding the text."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Refers to the extended modern definition of this class to the classical context of religious organizations (Jews, Christians, Muslims), their subgroups (Sunni, Shia, Ismailities), theological school of thoughts (Hanafi, Maliki, Shafi’i, Hanbali), tribes and clans (Hashim, Quraysh), and ethnic groups (Arabs, Greeks, Persians)."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Other",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A general class for any miscellaneous or uncategorised elements in the Tafsir, such as the name of languages (Arabic, Greek, Latin), angels (Gabriel, Michael, Raphael), and (polytheistic) deities (Al-Uzza, Al-Lat, Manat, Baa)"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Poetry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents poetic verses or stanzas referenced within the Tafsir."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Section",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A major division within the Tafsir, often corresponding to significant thematic breaks."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Segment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents a smaller portion of a section, focusing on specific verses or themes."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/SubSection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A subdivision within a section, allowing for detailed thematic or topical breakdowns."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/SubTheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Subdivides the main themes into more specific topics for detailed analysis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Theme"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Surah",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents a chapter of the Quran, which is the primary text being interpreted in the Tafsir."
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "http://mlode.nlp2rdf.org/quranvocab#Chapter"
+  }, {
+    "@value" : "http://quranontology.com/Resource/Chapter"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/TafsirChapter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes a chapter within the Tafsir, organising the commentary into sections. Usually corresponds to the Surahs of the Quran."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/TafsirCollection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the entire compilation of Tafsir works, encompassing all chapters, sections, and interpretations within a particular edition or collection of Tafsir literature. This class organises the Tafsir content as a cohesive set, providing a structured framework for accessing and analysing the exegesis as a whole."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/ThematicVerseFragmentReference",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Refers to a specific fragment of a thematic verse that is analysed in detail within the Tafsir, providing a focused interpretation of that segment."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/ThematicVerseReference",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents a Quranic verse that has been identified as thematically significant within the Tafsir, highlighting its relevance to specific themes or concepts."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Theme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Captures the major themes identified in the Tafsir, organizing the content around key concepts."
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "http://quranontology.com/Resource/Topic"
+  }, {
+    "@value" : "http://www.semantichadith.com/ontology/Topic"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Time",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents temporal information mentioned in the Tafsir, such as historical periods or specific dates. In the early 7th century, the moon calendar was still in its primary form, hence there was not a proper usage of numerical format like in our modern days. Therefore, dates were mostly written out in\nwords, either only by day name, or sometimes including the month name, and rarely, the year. Also well-known temporal entities, such as the Day of Judgment (Youm Al-Din)."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/Verse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Verse from the Qur'an."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Refers to a specific verse of the Quran that is the subject of interpretation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ayah"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "http://mlode.nlp2rdf.org/quranvocab#Vers"
+  }, {
+    "@value" : "http://quranontology.com/Resource/Verse"
+  }, {
+    "@value" : "http://www.semantichadith.com/ontology/Verse"
+  }, {
+    "@value" : "https://www.wikidata.org/entity/Q188219"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/VerseFragment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A part of a Quranic verse that is individually analysed or referenced in the Tafsir."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/commentedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates that a specific verse or passage is commented on within a particular section of the Tafsir."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Section"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/isAbout"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/containsAdditionalText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies that an entity includes additional text or annotation, often used for footnotes or marginalia."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/AdditionalText"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/hasPart"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/containsCommentary",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates that an entity includes commentary, typically linked to a Quranic verse or thematic discussion."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Commentary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/hasPart"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/containsSection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Associates a higher-level entity (e.g., a chapter) with one of its sections."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Section"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/hasPart"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/containsSegment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a section to one of its smaller segments, reflecting the breakdown of the content into manageable parts."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Segment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/hasPart"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/containsSubSection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates that a section is further divided into subsections, used for detailed organisational structure."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/SubSection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/hasPart"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/containsVerse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a Tafsir or commentary to the specific Quranic verse it interprets or explains."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Verse"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/hasPart"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/containsVerseFragment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a commentary or note to a specific fragment of a Quranic verse, allowing for granular analysis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/VerseFragment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/hasPart"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasBookLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links an entity to its corresponding book location, indicating where the text can be found within a physical or digital book."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasChapterNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Specifies the chapter number within a Tafsir, used to organize and reference specific chapters."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasCommentaryNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the number assigned to a particular commentary within a chapter or section, allowing for easy identification"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasDatasetLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects an entity to the dataset’s location, often used to reference the source of data or annotations."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasEdition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Captures the edition number or details of a specific version of a text or Tafsir, useful for referencing different editions"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasHadithNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates the number assigned to a Hadith within a collection, facilitating retrieval and cross-referencing"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A unique identifier assigned to an entity within the ontology, ensuring each entity can be distinctly referenced"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasLanguage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes the language in which a text, commentary, or note is written, supporting multilingual representations."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasLineBeginning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Associates a segment of text with the beginning of a line, important for preserving the structure of the text as presented in the original manuscript."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the name of an entity, such as a person, location, or theme, providing a human-readable label."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasNarratorType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the type of narrator, such as whether they are a primary source or a secondary transmitter in the chain of narration"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/HadithNarrator"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasNote",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a piece of text to a corresponding note or annotation, providing additional context or explanation."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasPageNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates the page number where a text or commentary can be found, useful for referencing specific locations within a physical or digital book."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasReferenceNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies a reference number used for citing or linking to other texts, annotations, or scholarly works"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasSectionNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the section number within a chapter, used for organising and navigating the content."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasSubSectionNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates the subsection number within a section, allowing for more granular categorisation of content."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasSubTheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a theme to its sub-themes, providing a more detailed categorisation within a broader thematic area"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/SubTheme"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/hasTheme"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasSubType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Captures the subtype of an entity, providing additional classification details beyond the primary type."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasSurahNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the Surah (chapter) number from the Quran that is being interpreted or referenced in the Tafsir"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Contains the actual text content of an entity, such as the full text of a verse, commentary, or annotation."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasTheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Associates a verse, segment, or commentary with a broader thematic concept, allowing for thematic organization within the ontology."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Theme"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents temporal information, such as the date or period associated with an event or narration."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates the type or category of an entity, used to classify and organise different elements within the ontology"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasVerseNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the verse number from the Quran, used to reference specific verses within the text."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/hasVolumeNo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Captures the volume number within a multi-volume work, aiding in the identification and location of content across volumes"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/isAbout",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Describes the subject matter or focus of a commentary or note, linking it to the relevant verse."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Section"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/isPartOfHadith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies that an entity is part of a Hadith, such as a segment of the narrator chain."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantichadith.com/ontology/Hadith"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/isPartOf"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/isPartOfVerse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a verse fragment to the full verse it is part of."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/VerseFragment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Verse"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/isPartOf"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/isSubThemeOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Establishes a relationship where a sub-theme is part of a larger theme, reflecting the hierarchical structure of thematic categorization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/SubTheme"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/Theme"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/mentionedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links an entity (e.g., person, place, or concept) to the specific text where it is mentioned."
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@value" : "http://quranontology.com/Resource/MentionedIn"
+  }, {
+    "@value" : "http://www.semantichadith.com/ontology/mentionedIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semantictafsir.com/ontology/mentions"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/mentions",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates that a text or commentary references a particular entity, such as a person or concept."
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@value" : "http://quranontology.com/Resource/ContainsMentionOf"
+  }, {
+    "@value" : "http://schema.org/mentions"
+  }, {
+    "@value" : "http://www.semantichadith.com/ontology/containsMentionOf"
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/references",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a text or commentary to another text it references, showing the relationship between different parts of the literature."
+  } ]
+}, {
+  "@id" : "http://www.semantictafsir.com/ontology/refersTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates a relationship where one text refers to another, such as a Tafsir referencing a Quranic verse or Hadith"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#equivalentProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]
