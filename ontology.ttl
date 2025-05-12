@@ -10,6 +10,7 @@
 <http://www.semantictafsir.com/ontology/> rdf:type owl:Ontology ;
                                            <http://purl.org/dc/terms/creator> "Amna Basharat" ,
                                                                               "Amna binte Kamran" ;
+                                            owl:versionIRI <https://purl.org/semantictafsir> ;
                                            <http://purl.org/dc/terms/description> "The SemanticTafsir ontology is developed to encapsulate and preserve the knowledge from Tafsir, focusing on the Quranic commentary structured within its literary context. This ontology serves as a vocabulary to model  Quranic verses, Tafsir interpretations, and referenced Hadith"@en ;
                                            <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by-sa/4.0/" ;
                                            <http://purl.org/dc/terms/title> "The  Semantic Tafsir Ontology" .
