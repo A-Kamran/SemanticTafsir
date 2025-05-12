@@ -63,7 +63,7 @@ The ontology was developed using Protégé 5.5.0, with reasoning support from He
 OWL API  (Java API for OWL used to build, manipulate and store the ontology in various supported formats)
 
 3. **Ontology metrics (SHOULD)**
-The ontology comprises 35+ classes, 25+ object properties, 20+ data properties, and over 25,000 triples in the generated knowledge graph.
+The ontology comprises 30+ classes, 35+ object properties, 15+ data properties, and over 25,000 triples in the generated knowledge graph.
 
 4. **Incorporation of other ontologies (MUST)**
 [DCTerms](<http://purl.org/dc/terms>), [schema](<http://schema.org>), [dbpedia](<http://dbpedia.org>), [SemanticHadith](<http://www.semantichadith.com/ontology>) , through subclassing and use of owl:equivalentClass and owl:equivalentProperty.
