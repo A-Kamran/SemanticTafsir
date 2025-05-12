@@ -10,6 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://www.semantictafsir.com/ontology/">
+       <owl:versionIRI rdf:resource="https://purl.org/semantictafsir"/>
         <terms:creator>Amna Basharat</terms:creator>
         <terms:creator>Amna binte Kamran</terms:creator>
         <terms:description xml:lang="en">The SemanticTafsir ontology is developed to encapsulate and preserve the knowledge from Tafsir, focusing on the Quranic commentary structured within its literary context. This ontology serves as a vocabulary to model  Quranic verses, Tafsir interpretations, and referenced Hadith</terms:description>
