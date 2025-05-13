@@ -8,20 +8,23 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 **SPARQL Query:**
 ```
+PREFIX schema: <http://schema.org/>
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT DISTINCT ?commentary ?person ?name ?poetry
+SELECT DISTINCT ?poetry ?poetryText ?person ?name 
 WHERE {
     ?commentary rdf:type :Commentary.
     ?commentary :references ?poetry.
-    ?poetry rdf:type :Poetry.
-    ?commentary :mentions ?person.
-    ?person rdf:type :Person.
+    ?poetry rdf:type :Poetry;
+    		:hasText ?poetryText.
+    ?poetry :mentions ?person.
+    ?person rdf:type schema:Person.
     ?person :hasName ?name.
-    
-    VALUES(?name){("حميد بن ثور الهلالي")}
+
+     VALUES(?name){("ابن عفان")}
 }
+
 
 ```
 
@@ -75,6 +78,7 @@ WHERE {
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
 
 SELECT DISTINCT ?chapter ?section ?name ?commentary
 WHERE {
@@ -82,7 +86,7 @@ WHERE {
     ?chapter :containsSection ?section.
     ?section :containsCommentary ?commentary.
     ?commentary :mentions ?thing.
-    ?thing a :Person.
+    ?thing a schema:Person.
     ?thing :hasName ?name.
     
 }
@@ -246,13 +250,14 @@ WHERE {
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
 
 SELECT ?verse ?thing
 WHERE {
     ?verse a :Commentary.
     ?verse :mentions ?thing.
     ?thing a ?type
-    FILTER (?type = :Organization && ?type = :Person)
+    FILTER (?type = :Organization && ?type = schema:Person)
 }
 
 
