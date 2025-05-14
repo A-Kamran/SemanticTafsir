@@ -733,7 +733,21 @@ the city where the person was living. Once the full name is mentioned, short for
     <!-- http://www.semantictafsir.com/ontology/NarratorType -->
 
     <owl:Class rdf:about="http://www.semantictafsir.com/ontology/NarratorType">
-        <rdfs:comment xml:lang="en">Categorises narrators based on their role or reliability in the chain of transmission. Denotes the role or classification of a narrator in the transmission of Tafsir content, including types such as Qari (reciter), Rawi (narrator), Sahabi (companion of the Prophet), Shaykh (learned authority), and Unknown_Rawi (unidentified narrator).</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semantictafsir.com/ontology#rawi"/>
+                    <rdf:Description rdf:about="http://www.semantictafsir.com/ontology#sahabi"/>
+                    <rdf:Description rdf:about="http://www.semantictafsir.com/ontology#shaykh"/>
+                    <rdf:Description rdf:about="http://www.semantictafsir.com/ontology#unknown_rawi"/>
+                    <rdf:Description rdf:about="http://www.semantictafsir.com/ontology#unknown_sahabi"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">
+    Categorises narrators based on their role or reliability in the chain of transmission. Denotes the role or classification of a narrator in the transmission of Tafsir content, including types such as Rawi (narrator), Sahabi (companion of the Prophet), Shaykh (learned authority), and Unknown_Rawi (unidentified narrator).
+  </rdfs:comment>
+        <rdfs:label xml:lang="en">Narrator Type</rdfs:label>
     </owl:Class>
     
 
@@ -883,6 +897,67 @@ words, either only by day name, or sometimes including the month name, and rarel
     <owl:Class rdf:about="http://www.semantictafsir.com/ontology/VerseFragment">
         <rdfs:comment xml:lang="en">A part of a Quranic verse that is individually analysed or referenced in the Tafsir.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semantictafsir.com/ontology#rawi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semantictafsir.com/ontology#rawi">
+        <rdf:type rdf:resource="http://www.semantictafsir.com/ontology/NarratorType"/>
+        <rdfs:comment xml:lang="en">A transmitter of hadith, often from later generations.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rawi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semantictafsir.com/ontology#sahabi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semantictafsir.com/ontology#sahabi">
+        <rdf:type rdf:resource="http://www.semantictafsir.com/ontology/NarratorType"/>
+        <rdfs:comment xml:lang="en">A companion of the Prophet Muhammad.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sahabi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semantictafsir.com/ontology#shaykh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semantictafsir.com/ontology#shaykh">
+        <rdf:type rdf:resource="http://www.semantictafsir.com/ontology/NarratorType"/>
+        <rdfs:comment xml:lang="en">A scholar or teacher of hadith.</rdfs:comment>
+        <rdfs:label xml:lang="en">Shaykh</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semantictafsir.com/ontology#unknown_rawi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semantictafsir.com/ontology#unknown_rawi">
+        <rdf:type rdf:resource="http://www.semantictafsir.com/ontology/NarratorType"/>
+        <rdfs:comment xml:lang="en">A hadith transmitter whose identity is uncertain.</rdfs:comment>
+        <rdfs:label xml:lang="en">Unknown Rawi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semantictafsir.com/ontology#unknown_sahabi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semantictafsir.com/ontology#unknown_sahabi">
+        <rdf:type rdf:resource="http://www.semantictafsir.com/ontology/NarratorType"/>
+        <rdfs:comment xml:lang="en">A companion of the Prophet whose identity is unknown.</rdfs:comment>
+        <rdfs:label xml:lang="en">Unknown Sahabi</rdfs:label>
+    </owl:NamedIndividual>
     
 
 
