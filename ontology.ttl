@@ -478,8 +478,34 @@ the city where the person was living. Once the full name is mentioned, short for
 
 ###  http://www.semantictafsir.com/ontology/NarratorType
 :NarratorType rdf:type owl:Class ;
-              rdfs:comment "Categorises narrators based on their role or reliability in the chain of transmission. Denotes the role or classification of a narrator in the transmission of Tafsir content, including types such as Qari (reciter), Rawi (narrator), Sahabi (companion of the Prophet), Shaykh (learned authority), and Unknown_Rawi (unidentified narrator)."@en .
+			  rdfs:label "Narrator Type"@en ;
+              rdfs:comment "Categorises narrators based on their role or reliability in the chain of transmission. Denotes the role or classification of a narrator in the transmission of Tafsir content, including types such as Rawi (narrator), Sahabi (companion of the Prophet), Shaykh (learned authority), and Unknown_Rawi (unidentified narrator)."@en ;
+			  owl:oneOf ( :rawi :shaykh :sahabi :unknown_rawi :unknown_sahabi ) .
+			  
+:rawi a owl:NamedIndividual ;
+    rdf:type :NarratorType ;
+    rdfs:label "Rawi"@en ;
+    rdfs:comment "A transmitter of hadith, often from later generations."@en .
 
+:shaykh a owl:NamedIndividual ;
+    rdf:type :NarratorType ;
+    rdfs:label "Shaykh"@en ;
+    rdfs:comment "A scholar or teacher of hadith."@en .
+
+:sahabi a owl:NamedIndividual ;
+    rdf:type :NarratorType ;
+    rdfs:label "Sahabi"@en ;
+    rdfs:comment "A companion of the Prophet Muhammad."@en .
+
+:unknown_rawi a owl:NamedIndividual ;
+    rdf:type :NarratorType ;
+    rdfs:label "Unknown Rawi"@en ;
+    rdfs:comment "A hadith transmitter whose identity is uncertain."@en .
+
+:unknown_sahabi a owl:NamedIndividual ;
+    rdf:type :NarratorType ;
+    rdfs:label "Unknown Sahabi"@en ;
+    rdfs:comment "A companion of the Prophet whose identity is unknown."@en .
 
 ###  http://www.semantictafsir.com/ontology/Note
 :Note rdf:type owl:Class ;
