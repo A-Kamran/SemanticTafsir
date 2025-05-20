@@ -85,7 +85,7 @@ WHERE {
 ```
 
 ### Competency Question 4:
-**Question:** Which Chapter hasSection mentioning Person Y? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ4%20Which%20Chapter%20hasSection%20mentioning%20Person%20Y%3F]
+**Question:** Which Chapter hasSection mentioning Person Y? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ4%20Which%20Chapter%20hasSection%20mentioning%20Person%20Y%3F)
 
 **SPARQL Query:**
 ```
@@ -108,7 +108,7 @@ WHERE {
 ```
 
 ### Competency Question 5:
-**Question:** How many themes are mentioned in Chapter X? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ5%20How%20many%20themes%20are%20mentioned%20in%20Chapter%20X%3F]
+**Question:** How many themes are mentioned in Chapter X? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ5%20How%20many%20themes%20are%20mentioned%20in%20Chapter%20X%3F)
 
 **SPARQL Query:**
 ```
@@ -128,7 +128,7 @@ GROUP BY ?chapter
 ```
 
 ### Competency Question 6:
-**Question:** Which themes are discussed in multiple chapters? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ6%20Which%20themes%20are%20discussed%20in%20multiple%20chapters%3F]
+**Question:** Which themes are discussed in multiple chapters? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ6%20Which%20themes%20are%20discussed%20in%20multiple%20chapters%3F)
 
 **SPARQL Query:**
 ```
@@ -148,7 +148,7 @@ ORDER BY DESC(?chapterCount)
 ```
 
 ### Competency Question 7:
-**Question:** What are the types of HadithNarrators? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ7%20What%20are%20the%20types%20of%20HadithNarrators%3F]
+**Question:** What are the types of HadithNarrators? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ7%20What%20are%20the%20types%20of%20HadithNarrators%3F)
 
 **SPARQL Query:**
 ```
@@ -166,7 +166,7 @@ WHERE {
 ```
 
 ### Competency Question 8:
-**Question:** Which verses are most frequently referenced in the Tafsir? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ8%20Which%20verses%20are%20most%20frequently%20referenced%20in%20the%20Tafsir%3F]
+**Question:** Which verses are most frequently referenced in the Tafsir? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ8%20Which%20verses%20are%20most%20frequently%20referenced%20in%20the%20Tafsir%3F)
 
 **SPARQL Query:**
 ```
@@ -199,7 +199,7 @@ LIMIT 10
 ```
 
 ### Competency Question 9:
-**Question:** Which Commentary mentions Location B? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ9%20Which%20Commentary%20mentions%20Location%20B%3F]
+**Question:** Which Commentary mentions Location B? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ9%20Which%20Commentary%20mentions%20Location%20B%3F)
 
 **SPARQL Query:**
 ```
@@ -220,7 +220,7 @@ WHERE {
 ```
 
 ### Competency Question 10:
-**Question:** Do all sections mention multiple persons? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ10%20%20Do%20all%20sections%20mention%20multiple%20persons%3F]
+**Question:** Do all sections mention multiple persons? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ10%20%20Do%20all%20sections%20mention%20multiple%20persons%3F)
 
 **SPARQL Query:**
 ```
@@ -243,7 +243,7 @@ ASK {
 ```
 
 ### Competency Question 11:
-**Question:** Where can I find sections about a specific Verse X? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ11%20Where%20can%20I%20find%20sections%20about%20a%20specific%20Verse%20X%3F]
+**Question:** Where can I find sections about a specific Verse X? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ11%20Where%20can%20I%20find%20sections%20about%20a%20specific%20Verse%20X%3F)
 
 **SPARQL Query:**
 ```
@@ -263,7 +263,7 @@ WHERE {
 ```
 
 ### Competency Question 12:
-**Question:** List all verse numbers where an entity of type "Other" is mentioned. (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ12%20List%20all%20verse%20numbers%20where%20an%20entity%20of%20type%20%22Other%22%20is%20mentioned.%20]
+**Question:** List all verse numbers where an entity of type "Other" is mentioned. [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ12%20List%20all%20verse%20numbers%20where%20an%20entity%20of%20type%20%22Other%22%20is%20mentioned.%20)
 
 **SPARQL Query:**
 ```
@@ -283,7 +283,7 @@ WHERE {
 ```
 
 ### Competency Question 13:
-**Question:** Which Commentary mentions both a Person and an Organisation? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ13%20Which%20Commentary%20mentions%20both%20a%20Person%20and%20an%20Organisation%3F]
+**Question:** Which Commentary mentions both a Person and an Organisation? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ13%20Which%20Commentary%20mentions%20both%20a%20Person%20and%20an%20Organisation%3F)
 
 **SPARQL Query:**
 ```
@@ -309,7 +309,7 @@ WHERE {
 ```
 
 ### Competency Question 14:
-**Question:** Search a Hadith where NarratorChain has Narrator A and Narrator B but not Narrator C and HadithText includes Theme A and Location B.  (Run Query)[]
+**Question:** Search a Hadith where NarratorChain has Narrator A and Narrator B but not Narrator C and HadithText includes Theme A and Location B.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -349,7 +349,7 @@ WHERE {
 ```
 
 ### Competency Question 15:
-**Question:** All the Hadith narrated from Narrator A.  (Run Query)[]
+**Question:** All the Hadith narrated from Narrator A.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -368,7 +368,7 @@ WHERE {
 ```
 
 ### Competency Question 16:
-**Question:** How many Hadith narrated by Narrator A.  (Run Query)[]
+**Question:** How many Hadith narrated by Narrator A.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -388,7 +388,7 @@ WHERE {
 ```
 
 ### Competency Question 17:
-**Question:** How many Hadith narrated by Narrator A from Narrator B.  (Run Query)[]
+**Question:** How many Hadith narrated by Narrator A from Narrator B.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -410,7 +410,7 @@ WHERE {
 ```
 
 ### Competency Question 18:
-**Question:** List of narrators by the number of their narrations. (Run Query)[]
+**Question:** List of narrators by the number of their narrations. [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -432,7 +432,7 @@ ORDER BY DESC(?count)
 ```
 
 ### Competency Question 19:
-**Question:** Which Narrator narrated most Hadith about Theme A.  (Run Query)[]
+**Question:** Which Narrator narrated most Hadith about Theme A.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -460,7 +460,7 @@ LIMIT 1
 ```
 
 ### Competency Question 20:
-**Question:** Most narrated Theme by Narrator A.  (Run Query)[]
+**Question:** Most narrated Theme by Narrator A.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -488,7 +488,7 @@ Limit 1
 ```
 
 ### Competency Question 21:
-**Question:** Number of Hadith by Theme narrated by Narrator A.  (Run Query)[]
+**Question:** Number of Hadith by Theme narrated by Narrator A.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -515,7 +515,7 @@ ORDER BY DESC(?noofhadith)
 ```
 
 ### Competency Question 22:
-**Question:** What is the frequency of a specific chain or part of a chain.  (Run Query)[]
+**Question:** What is the frequency of a specific chain or part of a chain.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -542,7 +542,7 @@ group by ?n1 ?n2 ?n3
 ```
 
 ### Competency Question 23:
-**Question:** Any NarratorChain that is repeated more than 10 times.  (Run Query)[]
+**Question:** Any NarratorChain that is repeated more than 10 times.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -570,7 +570,7 @@ HAVING (COUNT(DISTINCT ?h) > 10)
 ```
 
 ### Competency Question 24:
-**Question:** Frequency of partial NarratorChain repeating at least ten times.  (Run Query)[]
+**Question:** Frequency of partial NarratorChain repeating at least ten times.  [Run Query]()
 
 **SPARQL Query:**
 
@@ -595,7 +595,7 @@ HAVING (COUNT(DISTINCT ?h) > 10)
 ```
 
 ### Competency Question 25:
-**Question:** Search Hadith 'mauquf' from Narrator A.  (Run Query)[]
+**Question:** Search Hadith 'mauquf' from Narrator A.  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -614,7 +614,7 @@ where
 ```
 
 ### Competency Question 26:
-**Question:** Search Hadith that references ayah 11:11 (or surah 11 i.e. any ayah of surah 11).  (Run Query)[]
+**Question:** Search Hadith that references ayah 11:11 (or surah 11 i.e. any ayah of surah 11).  [Run Query]()
 
 **SPARQL Query:**
 ```
@@ -634,7 +634,7 @@ where
 ```
 
 ### Competency Question 27:
-**Question:** What Section do I need to examine to find Verse Y?  (Run Query)[]
+**Question:** What Section do I need to examine to find Verse Y?  [Run Query]()
 
 **SPARQL Query:**
 ```
