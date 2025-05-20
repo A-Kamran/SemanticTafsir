@@ -309,37 +309,29 @@ WHERE {
 ```
 
 ### Competency Question 14:
-**Question:** Search a Hadith where NarratorChain has Narrator A and Narrator B but not Narrator C and HadithText includes Theme A and Location B.  [Run Query]()
+**Question:** Search a Hadith where NarratorChain has Narrator A and Narrator B but not Narrator C and HadithText includes Theme A and Location B.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ14%20%20Search%20a%20Hadith%20where%20NarratorChain%20has%20Narrator%20A%20and%20Narrator%20B%20but%20not%20Narrator%20C%20and%20HadithText%20includes%20Theme%20A%20and%20Location%20B.)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 
-SELECT DISTINCT ?hadith ?segment ?theme
+SELECT DISTINCT ?hadith ?segment ?theme 
 WHERE {
-    ?hadith rdf:type :Hadith .
+    ?hadith rdf:type hadith:Hadith .
     ?hadith :containsSegment ?segment.
     ?segment :hasSubTheme ?subTheme.
     ?subTheme :isSubThemeOf ?theme.
     ?theme :hasName ?themeName.
     
-    ?hadith :containsNarratorChain ?chain .
-    ?chain :hasNarratorSegment ?Nsegment .
-    ?Nsegment :refersTo ?narrator .
-    ?narrator :hasName ?name .
-    
-    ?chain :hasNarratorSegment ?segmentA .
-    ?segmentA :refersTo ?narratorA .
+    ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator ?narratorA .
+    ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator ?narratorB .
     ?narratorA :hasName ?narratorOne.
-    
-    ?chain :hasNarratorSegment ?segmentB .
-    ?segmentB :refersTo ?narratorB .
     ?narratorB :hasName ?narratorTwo.
     
     FILTER NOT EXISTS {
-        ?chain :hasNarratorSegment ?segmentC .
-        ?segmentC :refersTo ?narratorC .
+         ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator ?narratorC .
         ?narratorC :hasName ?narratorThree.
     }
     
