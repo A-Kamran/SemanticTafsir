@@ -4,7 +4,8 @@
 The given SPARQL are _examples_ that may be reinterpreted and reused for applications.
 
 ### Competency Question 1:
-**Question:** Find all Poetry in the Tafsir that mentions a Person X.
+**Question:** Find all Poetry in the Tafsir that mentions a Person X.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ1%20Find%20all%20Poetry%20in%20the%20Tafsir%20that%20mentions%20a%20Person%20X.)
+
 
 **SPARQL Query:**
 ```
@@ -29,7 +30,25 @@ WHERE {
 ```
 
 ### Competency Question 2:
-**Question:** List all VerseFragments discussed in Chapter X.
+**Question:** List all references made to verse fragments from Chapter X within the Tafsir.
+Which VerseFragments from a given chapter are referenced across the Tafsir commentary? [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ2%20List%20all%20VerseFragments%20discussed%20in%20Chapter%20X.)
+
+**SPARQL Query:**
+```
+PREFIX : <http://www.semantictafsir.com/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?x ?verseFragment ?text  
+WHERE {
+    ?verseFragment a :VerseFragment.
+    ?verseFragment :hasChapterNo "110";
+    				:hasText ?text.
+    ?x :references ?verseFragment.
+ 	
+}
+```
+
+List all VerseFragments of Chapter X. [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=All%20Verse%20Fragments%20of%20Surah%20X)
 
 **SPARQL Query:**
 ```
@@ -39,62 +58,57 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 SELECT DISTINCT ?verseFragment ?chapNum
 WHERE {
     ?verse :containsVerseFragment ?verseFragment.
-    ?verseFragment :hasChapterNo ?chapNum.
-    VALUES(?chapNum){("110")}
+    ?verseFragment :hasChapterNo "110".
 }
 
 ```
 
+
+
 ### Competency Question 3:
-**Question:** List all Themes associated with Verse X in the Tafsir.
+**Question:** List all Themes associated with Verse X in the Tafsir. [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ3%20List%20all%20Themes%20associated%20with%20Verse%20X%20in%20the%20Tafsir.)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT DISTINCT ?commentary ?theme ?thing ?chapNum ?verseNum
+SELECT DISTINCT ?commentary ?theme
 WHERE {
 
     ?commentary rdf:type :Commentary.
+    ?commentary :references :V002_001.
+  
     ?commentary :hasTheme ?theme.
-    ?commentary :references ?thing.
-    ?thing rdf:type :Verse.
-    ?thing :hasChapterNo ?chapNum.
-    ?thing :hasVerseNo ?verseNum.
-    
-    VALUES(?chapNum ?verseNum){("2" "1")}
-
 }
-
-
 
 ```
 
 ### Competency Question 4:
-**Question:** Which Chapter hasSection mentioning Person Y?
+**Question:** Which Chapter hasSection mentioning Person Y? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ4%20Which%20Chapter%20hasSection%20mentioning%20Person%20Y%3F]
 
 **SPARQL Query:**
 ```
+
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
 
-SELECT DISTINCT ?chapter ?section ?name ?commentary
+SELECT DISTINCT ?chapter ?section ?commentary
 WHERE {
 
     ?chapter :containsSection ?section.
     ?section :containsCommentary ?commentary.
-    ?commentary :mentions ?thing.
-    ?thing a schema:Person.
-    ?thing :hasName ?name.
+    ?commentary :mentions ?person.
+    ?person a schema:Person;
+    		:hasName "ابن عباس".
     
 }
 
 ```
 
 ### Competency Question 5:
-**Question:** How many themes are mentioned in Chapter X?
+**Question:** How many themes are mentioned in Chapter X? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ5%20How%20many%20themes%20are%20mentioned%20in%20Chapter%20X%3F]
 
 **SPARQL Query:**
 ```
@@ -114,7 +128,7 @@ GROUP BY ?chapter
 ```
 
 ### Competency Question 6:
-**Question:** Which themes are discussed in multiple chapters?
+**Question:** Which themes are discussed in multiple chapters? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ6%20Which%20themes%20are%20discussed%20in%20multiple%20chapters%3F]
 
 **SPARQL Query:**
 ```
@@ -134,56 +148,79 @@ ORDER BY DESC(?chapterCount)
 ```
 
 ### Competency Question 7:
-**Question:** What are the types of HadithNarrators?
+**Question:** What are the types of HadithNarrators? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ7%20What%20are%20the%20types%20of%20HadithNarrators%3F]
 
 **SPARQL Query:**
 ```
+PREFIX : <http://www.semantictafsir.com/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?narratorType ?label ?comment
+WHERE {
+  ?narratorType rdf:type :NarratorType ;
+                rdfs:label ?label .
+  OPTIONAL { ?narratorType rdfs:comment ?comment. }
+}
 
 ```
 
 ### Competency Question 8:
-**Question:** Which verses are most frequently referenced in the Tafsir?
+**Question:** Which verses are most frequently referenced in the Tafsir? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ8%20Which%20verses%20are%20most%20frequently%20referenced%20in%20the%20Tafsir%3F]
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?verseNum (COUNT(?commentary) AS ?referenceCount)
+SELECT ?verse (COUNT(?commentary) AS ?referenceCount)
 WHERE {
-    ?commentary a :Commentary.
-    ?commentary :references ?thing.
-    ?thing a ?type.
-    FILTER (?type = :Verse || ?type = :verseFragment)
-    ?thing :hasVerseNo ?verseNum.
+  {
+    # Direct references to a Verse
+    ?commentary a :Commentary ;
+                :references ?verse .
+    ?verse a :Verse .
+
+  }
+  UNION
+  {
+    # Indirect references via VerseFragment
+    ?commentary a :Commentary ;
+                :references ?fragment .
+    ?fragment a :VerseFragment ;
+              :isPartOfVerse ?verse .
+  }
 }
-GROUP BY ?verseNum
+GROUP BY ?verse ?verseText
 ORDER BY DESC(?referenceCount)
+LIMIT 10
+
 
 ```
 
 ### Competency Question 9:
-**Question:** Which Commentary mentions Location B?
+**Question:** Which Commentary mentions Location B? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ9%20Which%20Commentary%20mentions%20Location%20B%3F]
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?commentary ?thing
+SELECT ?commentary ?text
 WHERE {
-    ?commentary a :Commentary.
-    ?commentary :mentions ?thing.
-	?thing a :Location.
-    ?thing :hasName ?name
+    ?commentary a :Commentary;
+    		:mentions ?location;
+    	:hasText ?text.
+ 
+	?location a :Location.
+    ?location :hasName ?name
     
     VALUES(?name){("الكوفة")}
 }
-
 ```
 
 ### Competency Question 10:
-**Question:** Do all sections mention multiple persons?
+**Question:** Do all sections mention multiple persons? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ10%20%20Do%20all%20sections%20mention%20multiple%20persons%3F]
 
 **SPARQL Query:**
 ```
@@ -191,41 +228,42 @@ WHERE {
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?section (COUNT(DISTINCT ?person) AS ?personCount)
-WHERE {
-    ?chapter :containsSection ?section.
-    ?section :containsCommentary ?commentary.
-    ?commentary :mentions ?person.
+ASK {
+  FILTER NOT EXISTS {
+    SELECT ?section (COUNT(DISTINCT ?person) AS ?personCount)
+    WHERE {
+      ?chapter :containsSection ?section .
+      ?section :containsCommentary ?commentary .
+      ?commentary :mentions ?person .
+    }
+    GROUP BY ?section
+    HAVING (?personCount <= 1)
+  }
 }
-GROUP BY ?section
-HAVING (COUNT(DISTINCT ?person) > 1)
-
-
 ```
 
 ### Competency Question 11:
-**Question:** Where can I find sections about a specific Verse X?
+**Question:** Where can I find sections about a specific Verse X? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ11%20Where%20can%20I%20find%20sections%20about%20a%20specific%20Verse%20X%3F]
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?section ?thing ?type ?verseNum
+SELECT ?section ?verse ?text 
 WHERE {
     ?chapter :containsSection ?section.
-    ?section :isAbout ?thing.
-    ?thing a  ?type.
-    ?thing :hasVerseNo ?verseNum.
-    FILTER (?type = :Verse || ?type = :VerseFragment)
-    
-#    VALUES(?thing){("#VF001:001_003")}
+    ?section :isAbout ?verse.
+    ?verse a :Verse;
+    	:hasText ?text.
+
+    VALUES(?verse){(:V113_003)}
 }
 
 ```
 
 ### Competency Question 12:
-**Question:** List all verse numbers where an entity of type "Other" is mentioned.
+**Question:** List all verse numbers where an entity of type "Other" is mentioned. (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ12%20List%20all%20verse%20numbers%20where%20an%20entity%20of%20type%20%22Other%22%20is%20mentioned.%20]
 
 **SPARQL Query:**
 ```
@@ -233,18 +271,19 @@ WHERE {
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?verse ?thing
+SELECT ?verse ?other ?name
 WHERE {
     ?verse a :Verse.
-    ?verse :mentions ?thing.
-    ?thing a :Other
+    ?verse :mentions ?other.
+    ?other a :Other;
+    :hasName ?name.
 }
 
 
 ```
 
 ### Competency Question 13:
-**Question:** Which Commentary mentions both a Person and an Organisation?
+**Question:** Which Commentary mentions both a Person and an Organisation? (Run Query)[http://semantictafsir.iknex.com/sparql?savedQueryName=CQ13%20Which%20Commentary%20mentions%20both%20a%20Person%20and%20an%20Organisation%3F]
 
 **SPARQL Query:**
 ```
@@ -252,21 +291,25 @@ PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
 
-SELECT ?verse ?thing
+SELECT ?commentary ?text
 WHERE {
-    ?verse a :Commentary.
-    ?verse :mentions ?thing.
-    ?thing a ?type
-    FILTER (?type = :Organization && ?type = schema:Person)
+    ?commentary a :Commentary;
+    	:hasText ?text.
+
+    # Must mention at least one Person
+    ?commentary :mentions ?person .
+    ?person a schema:Person .
+
+    # Must also mention at least one Organization
+    ?commentary :mentions ?org .
+    ?org a :Organization .
 }
-
-
 
 
 ```
 
 ### Competency Question 14:
-**Question:** Search a Hadith where NarratorChain has Narrator A and Narrator B but not Narrator C and HadithText includes Theme A and Location B
+**Question:** Search a Hadith where NarratorChain has Narrator A and Narrator B but not Narrator C and HadithText includes Theme A and Location B.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -306,7 +349,7 @@ WHERE {
 ```
 
 ### Competency Question 15:
-**Question:** All the Hadith narrated from Narrator A
+**Question:** All the Hadith narrated from Narrator A.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -325,7 +368,7 @@ WHERE {
 ```
 
 ### Competency Question 16:
-**Question:** How many Hadith narrated by Narrator A
+**Question:** How many Hadith narrated by Narrator A.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -345,7 +388,7 @@ WHERE {
 ```
 
 ### Competency Question 17:
-**Question:** How many Hadith narrated by Narrator A from Narrator B
+**Question:** How many Hadith narrated by Narrator A from Narrator B.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -367,7 +410,7 @@ WHERE {
 ```
 
 ### Competency Question 18:
-**Question:** List of narrators by the number of their narrations
+**Question:** List of narrators by the number of their narrations. (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -389,7 +432,7 @@ ORDER BY DESC(?count)
 ```
 
 ### Competency Question 19:
-**Question:** Which Narrator narrated most Hadith about Theme A
+**Question:** Which Narrator narrated most Hadith about Theme A.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -417,7 +460,7 @@ LIMIT 1
 ```
 
 ### Competency Question 20:
-**Question:** Most narrated Theme by Narrator A
+**Question:** Most narrated Theme by Narrator A.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -445,7 +488,7 @@ Limit 1
 ```
 
 ### Competency Question 21:
-**Question:** Number of Hadith by Theme narrated by Narrator A
+**Question:** Number of Hadith by Theme narrated by Narrator A.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -472,7 +515,7 @@ ORDER BY DESC(?noofhadith)
 ```
 
 ### Competency Question 22:
-**Question:** What is the frequency of a specific chain or part of a chain
+**Question:** What is the frequency of a specific chain or part of a chain.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -499,7 +542,7 @@ group by ?n1 ?n2 ?n3
 ```
 
 ### Competency Question 23:
-**Question:** Any NarratorChain that is repeated more than 10 times
+**Question:** Any NarratorChain that is repeated more than 10 times.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -527,7 +570,7 @@ HAVING (COUNT(DISTINCT ?h) > 10)
 ```
 
 ### Competency Question 24:
-**Question:** Frequency of partial NarratorChain repeating at least ten times
+**Question:** Frequency of partial NarratorChain repeating at least ten times.  (Run Query)[]
 
 **SPARQL Query:**
 
@@ -552,7 +595,7 @@ HAVING (COUNT(DISTINCT ?h) > 10)
 ```
 
 ### Competency Question 25:
-**Question:** Search Hadith 'mauquf' from Narrator A
+**Question:** Search Hadith 'mauquf' from Narrator A.  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -571,7 +614,7 @@ where
 ```
 
 ### Competency Question 26:
-**Question:** Search Hadith that references ayah 11:11 (or surah 11 i.e. any ayah of surah 11)
+**Question:** Search Hadith that references ayah 11:11 (or surah 11 i.e. any ayah of surah 11).  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -591,7 +634,7 @@ where
 ```
 
 ### Competency Question 27:
-**Question:** What Section do I need to examine to find Verse Y?
+**Question:** What Section do I need to examine to find Verse Y?  (Run Query)[]
 
 **SPARQL Query:**
 ```
@@ -610,12 +653,3 @@ WHERE {
 
 ```
 
-### Competency Question 28:
-**Question:** What are the types of HadithNarrators?
-
-**SPARQL Query:**
-```
-
-```
-
-```
