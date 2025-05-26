@@ -317,7 +317,7 @@ PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX hadith: <http://www.semantichadith.com/ontology/>
 
-SELECT DISTINCT ?hadith ?segment ?theme 
+SELECT DISTINCT ?hadith ?theme 
 WHERE {
     ?hadith rdf:type hadith:Hadith .
     ?hadith :containsSegment ?segment.
@@ -341,80 +341,74 @@ WHERE {
 ```
 
 ### Competency Question 15:
-**Question:** All the Hadith narrated from Narrator A.  [Run Query]()
+**Question:** All the Hadith narrated from Narrator A.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ15%20All%20the%20Hadith%20narrated%20from%20Narrator%20A)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 
-SELECT DISTINCT ?hadith
+SELECT DISTINCT ?hadith ?hadithText
 WHERE {
-    ?hadith rdf:type :Hadith .
-    ?hadith :containsNarratorChain ?chain .
-    ?chain :hasNarratorSegment ?segment .
-    ?segment :refersTo ?narrator .
+    ?hadith rdf:type hadith:Hadith .
+    ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator ?narrator.
     ?narrator :hasName "ابن وهب".
+    ?hadith :hasText ?hadithText.
 }
 
 ```
 
 ### Competency Question 16:
-**Question:** How many Hadith narrated by Narrator A.  [Run Query]()
+**Question:** How many Hadith narrated by Narrator A.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ16%20How%20many%20Hadith%20narrated%20by%20Narrator%20A.)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 
 SELECT DISTINCT (COUNT(DISTINCT ?hadith) AS ?count)
-#SELECT DISTINCT ?hadith
 WHERE {
-    ?hadith rdf:type :Hadith .
-    ?hadith :containsNarratorChain ?chain .
-    ?chain :hasNarratorSegment ?segment .
-    ?segment :refersTo ?narrator .
-    ?narrator :hasName ?name .
-    VALUES(?name){("ابن وهب")}
+    ?hadith rdf:type hadith:Hadith .
+    ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator ?narrator.
+    ?narrator :hasName "ابن وهب".
 }
 ```
 
 ### Competency Question 17:
-**Question:** How many Hadith narrated by Narrator A from Narrator B.  [Run Query]()
+**Question:** How many Hadith narrated by Narrator A from Narrator B.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ17%20How%20many%20Hadith%20narrated%20by%20Narrator%20A%20from%20Narrator%20B.)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 
 SELECT DISTINCT (COUNT(DISTINCT ?hadith) AS ?count)
 WHERE {
-    ?hadith rdf:type :Hadith .
-    ?hadith :containsNarratorChain ?chain .
-    ?chain :hasNarratorSegment ?segment .
-    ?segment :refersTo ?narrator .
+    ?hadith rdf:type hadith:Hadith .
+    ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator ?narrator.
     ?narrator :hasName ?narratorA;
-    		  :heardFrom ?narratorID.
-    ?narratorID	  :hasName ?narratorB.
+	hadith:heardFrom ?narrator2.
+    ?narrator2	  :hasName ?narratorB.
     VALUES(?narratorA ?narratorB){("يونس بن عبد الأعلى" "ابن وهب")}
 }
-
 ```
 
 ### Competency Question 18:
-**Question:** List of narrators by the number of their narrations. [Run Query]()
+**Question:** List of narrators by the number of their narrations. [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ18%20List%20of%20narrators%20by%20the%20number%20of%20their%20narrations.)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 
 SELECT ?narratorName (COUNT(DISTINCT ?hadith) AS ?count)
 WHERE {
-    ?hadith rdf:type :Hadith .
-    ?hadith :containsNarratorChain ?chain .
-    ?chain :hasNarratorSegment ?segment .
-    ?segment :refersTo ?narrator .
+    ?hadith rdf:type hadith:Hadith .
+    ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator ?narrator.
     ?narrator :hasName ?narratorName .
 }
 GROUP BY ?narratorName
@@ -424,23 +418,22 @@ ORDER BY DESC(?count)
 ```
 
 ### Competency Question 19:
-**Question:** Which Narrator narrated most Hadith about Theme A.  [Run Query]()
+**Question:** Which Narrator narrated most Hadith about Theme A.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ19%20Which%20Narrator%20narrated%20most%20Hadith%20about%20Theme%20A.)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 
 SELECT ?narratorName (COUNT(DISTINCT ?hadith) AS ?count)
 WHERE {
-    ?hadith rdf:type :Hadith .
+    ?hadith rdf:type hadith:Hadith .
     ?hadith :containsSegment ?segment .
     ?segment :hasSubTheme ?subTheme .
     ?subTheme :isSubThemeOf ?theme .
     ?theme :hasName ?themeName.
-    ?hadith :containsNarratorChain ?chain .
-    ?chain :hasNarratorSegment ?narratorSegment .
-    ?narratorSegment :refersTo ?narrator .
+    ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator ?narrator.
     ?narrator :hasName ?narratorName .
     
     VALUES(?themeName){("kalam")}
@@ -452,24 +445,26 @@ LIMIT 1
 ```
 
 ### Competency Question 20:
-**Question:** Most narrated Theme by Narrator A.  [Run Query]()
+**Question:** Most narrated Theme by Narrator A.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ20%20please%20create%20a%20github%20documentation%20for%20these%20tags%20that%20are%20used%20to%20annotate%20the%20tafsir%20)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix hadith: <http://www.semantichadith.com/ontology/>
+
 select ?themeName (count(?hadith) as ?noofhadith)
 #select distinct ?themeName ?hadith
 where { 
     
-    ?hadith rdf:type :Hadith .
+    ?hadith rdf:type hadith:Hadith .
     ?hadith :containsSegment ?segment.
     ?segment :hasSubTheme ?subTheme.
     ?subTheme :isSubThemeOf ?theme.
     ?theme :hasName ?themeName.
 
-    ?hadith :containsNarratorChain/:hasRootNarratorSegment/:refersTo/:hasName ?name. 
+    ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator/:hasName ?name.
     
     VALUES(?name){("ابن علية")}
 }	
@@ -480,81 +475,74 @@ Limit 1
 ```
 
 ### Competency Question 21:
-**Question:** Number of Hadith by Theme narrated by Narrator A.  [Run Query]()
+**Question:** Number of Hadith by Theme narrated by Narrator A.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ21%20Number%20of%20Hadith%20by%20Theme%20narrated%20by%20Narrator%20A)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix hadith: <http://www.semantichadith.com/ontology/>
+
 select ?themeName (count(?hadith) as ?noofhadith)
 #select distinct ?themeName ?hadith
 where { 
     
-    ?hadith rdf:type :Hadith .
+    ?hadith rdf:type hadith:Hadith .
     ?hadith :containsSegment ?segment.
     ?segment :hasSubTheme ?subTheme.
     ?subTheme :isSubThemeOf ?theme.
     ?theme :hasName ?themeName.
 
-    ?hadith :containsNarratorChain/:hasRootNarratorSegment/:refersTo/:hasName ?name. 
+    ?hadith :containsNarratorChain/hadith:hasNarratorSegment/hadith:refersToNarrator/:hasName ?name.
     
     VALUES(?name){("ابن علية")}
 }	
 group by ?themeName
 ORDER BY DESC(?noofhadith)
-
 ```
 
 ### Competency Question 22:
-**Question:** What is the frequency of a specific chain or part of a chain.  [Run Query]()
+**Question:** What is the frequency of a specific chain or part of a chain.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ22%20What%20is%20the%20frequency%20of%20a%20specific%20chain%20or%20part%20of%20a%20chain.)
 
 **SPARQL Query:**
 ```
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://www.semantictafsir.com/ontology/>
-
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
 select ?n1 ?n2 ?n3 (count(distinct ?h) as ?noofhadith) 
-#select ?ns1
+
 where {
-    ?h :containsNarratorChain/:hasNarratorSegment ?ns1.
-    ?ns1 :refersTo ?n1.
-    ?ns1 :follows/:refersTo ?n2.
-    ?ns1 :follows/:follows/:refersTo ?n3.
-#    ?n1 :hasID "L8613".
-#    ?n2 :hasID "L5147".
-#    ?n3 :hasID "L7063".
-    ?n1 :hasName ?pname1.
-    ?n2 :hasName ?pname2.
-    ?n3 :hasName ?pname3.
+    ?h :containsNarratorChain/hadith:hasNarratorSegment ?ns1.
+    ?ns1 hadith:refersToNarrator ?n1.
+    ?ns1 hadith:follows/hadith:refersToNarrator ?n2.
+    ?ns1 hadith:follows/hadith:follows/hadith:refersToNarrator ?n3.
+
 } 
 group by ?n1 ?n2 ?n3
 
 ```
 
 ### Competency Question 23:
-**Question:** Any NarratorChain that is repeated more than 10 times.  [Run Query]()
+**Question:** Any NarratorChain that is repeated more than 10 times.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ23%20Any%20NarratorChain%20that%20is%20repeated%20more%20than%2010%20times)
 
 **SPARQL Query:**
 ```
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://www.semantictafsir.com/ontology/>
-
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
 select ?n1 ?n2 ?n3 (count(distinct ?h) as ?noofhadith) 
-#select ?ns1
+
 where {
-    ?h :containsNarratorChain/:hasNarratorSegment ?ns1.
-    ?ns1 :refersTo ?n1.
-    ?ns1 :follows/:refersTo ?n2.
-    ?ns1 :follows/:follows/:refersTo ?n3.
-#    ?n1 :hasID "L8613".
-#    ?n2 :hasID "L5147".
-#    ?n3 :hasID "L7063".
-    ?n1 :hasName ?pname1.
-    ?n2 :hasName ?pname2.
-    ?n3 :hasName ?pname3.
+    ?h :containsNarratorChain/hadith:hasNarratorSegment ?ns1.
+    ?ns1 hadith:refersToNarrator ?n1.
+    ?ns1 hadith:follows/hadith:refersToNarrator ?n2.
+    ?ns1 hadith:follows/hadith:follows/hadith:refersToNarrator ?n3.
+
 } 
 group by ?n1 ?n2 ?n3
 HAVING (COUNT(DISTINCT ?h) > 10)
@@ -562,31 +550,31 @@ HAVING (COUNT(DISTINCT ?h) > 10)
 ```
 
 ### Competency Question 24:
-**Question:** Frequency of partial NarratorChain repeating at least ten times.  [Run Query]()
+**Question:** Frequency of partial NarratorChain repeating at least ten times.  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ24%20Frequency%20of%20partial%20NarratorChain%20repeating%20at%20least%20ten%20times.)
 
 **SPARQL Query:**
 
 ```
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://www.semantictafsir.com/ontology/>
-
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
 select ?n1 ?n2 ?n3 (count(distinct ?h) as ?noofhadith) 
-#select ?ns1
+
 where {
-    ?h :containsNarratorChain/:hasNarratorSegment ?ns1.
-    ?ns1 :refersTo ?n1.
-    ?ns1 :follows/:refersTo ?n2.
-    ?ns1 :follows/:follows/:refersTo ?n3.
-    ?n1 :hasName ?pname1.
-    ?n2 :hasName ?pname2.
-    ?n3 :hasName ?pname3.
+    ?h :containsNarratorChain/hadith:hasNarratorSegment ?ns1.
+    ?ns1 hadith:refersToNarrator ?n1.
+    ?ns1 hadith:follows/hadith:refersToNarrator ?n2.
+    ?ns1 hadith:follows/hadith:follows/hadith:refersToNarrator ?n3.
+
 } 
 group by ?n1 ?n2 ?n3
 HAVING (COUNT(DISTINCT ?h) > 10)
 ```
 
 ### Competency Question 25:
+<!--
 **Question:** Search Hadith 'mauquf' from Narrator A.  [Run Query]()
 
 **SPARQL Query:**
@@ -604,43 +592,43 @@ where
 
 }  
 ```
-
-### Competency Question 26:
-**Question:** Search Hadith that references ayah 11:11 (or surah 11 i.e. any ayah of surah 11).  [Run Query]()
+-->
+**Question:** Search Hadith that references ayah 11:6 (or surah 11 i.e. any ayah of surah 11).  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ25%20Search%20Hadith%20that%20references%20ayah%2011%3A6)
 
 **SPARQL Query:**
 ```
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-select distinct  ?hadith  ?chapNum 
+select distinct  ?hadith  
 where 
 { 
 
-    ?hadith rdf:type :Hadith .
-    ?hadith :follows/:references/:hasChapterNo ?chapNum.
+    ?hadith rdf:type hadith:Hadith .
+    ?hadith :references ?verse.
+    ?verse :hasChapterNo "11".
+    ?verse :hasVerseNo "6".
     
-    FILTER (xsd:int(?chapNum) = 11).
-   }
+}
 ```
 
-### Competency Question 27:
-**Question:** What Section do I need to examine to find Verse Y?  [Run Query]()
+### Competency Question 26:
+**Question:** What Section do I need to examine to find Verse Y?  [Run Query](http://semantictafsir.iknex.com/sparql?savedQueryName=CQ26%20What%20Section%20do%20I%20need%20to%20examine%20to%20find%20Verse%20Y)
 
 **SPARQL Query:**
 ```
 PREFIX : <http://www.semantictafsir.com/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hadith: <http://www.semantichadith.com/ontology/>
 
-SELECT ?section ?thing
+SELECT ?section ?verse
 WHERE {
     ?section a :Section.
-#    ?section :isAbout "VF_001". #verse name is given but not getting any result
-    ?section :isAbout ?thing.
-    ?thing a ?type.
-    FILTER (?type = :Verse || ?type = :VerseFragment)
-    
+    ?section :isAbout ?verse.
+    ?verse :hasChapterNo "2".
+    ?verse :hasVerseNo "4".
 }
 
 ```
