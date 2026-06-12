@@ -82,7 +82,8 @@ $(function(){
 <!--DESCRIPTION SECTION-->
     <div id="description"><h2 id="desc" class="list">The  Semantic Tafsir Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-The SemanticTafsir ontology is developed to encapsulate and preserve the knowledge from Tafsir, focusing on the Quranic commentary structured within its literary context. This ontology serves as a vocabulary to model  Quranic verses, Tafsir interpretations, and referenced Hadith</span>
+The SemanticTafsir ontology is developed to encapsulate and preserve the knowledge from Tafsir, focusing on the Quranic commentary structured within its literary context. This ontology serves as a vocabulary to model  Quranic verses, Tafsir interpretations, and referenced Hadith. SemanticTafsir is aligned with CIDOC CRM for cultural heritage interoperability and selectively aligned with LRMoo for bibliographic distinctions. Domain-specific
+constructs for Tafsir interpretation, thematic analysis, and Hadith transmission are retained as SemanticTafsir .</span>
 <img src="ConceptualModel.png" alt="Conceptual Model of Semantic Tafsir Ontology" style="width: 100%; height: auto;>
 </div>
 
@@ -102,6 +103,10 @@ The SemanticTafsir ontology is developed to encapsulate and preserve the knowled
 <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
 <tr><td><b>hadith</b></td><td>&lt;http://www.semantichadith.com/ontology&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>cidoc-crm</b></td><td>&lt;http://www.cidoc-crm.org/cidoc-crm&gt;</td></tr>
 </tbody>
 </table>
 </div>
@@ -119,178 +124,174 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#AdditionalText"
          title="http://www.semantictafsir.com/ontology/AdditionalText">
-         <span>AdditionalText</span>
+         <span>additional text</span>
       </a>
    </li>
    <li>
-      <a href="#Verse" title="http://www.semantictafsir.com/ontology/Verse">Verse</a>
+      <a href="#Verse" title="http://www.semantictafsir.com/ontology/Verse">Ayah</a>
    </li>
    <li>
       <a href="#BookLocation"
          title="http://www.semantictafsir.com/ontology/BookLocation">
-         <span>BookLocation</span>
+         <span>book location</span>
       </a>
    </li>
    <li>
       <a href="#Commentary"
          title="http://www.semantictafsir.com/ontology/Commentary">
-         <span>Commentary</span>
+         <span>commentary</span>
       </a>
    </li>
    <li>
       <a href="#DatasetLocation"
          title="http://www.semantictafsir.com/ontology/DatasetLocation">
-         <span>DatasetLocation</span>
+         <span>dataset location</span>
       </a>
    </li>
    <li>
       <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">
-         <span>Hadith</span>
+         <span>hadith</span>
       </a>
    </li>
    <li>
       <a href="#http://www.semantichadith.com/ontology/HadithNarrator"
          title="http://www.semantichadith.com/ontology/HadithNarrator">
-         <span>HadithNarrator</span>
+         <span>hadith narrator</span>
       </a>
    </li>
    <li>
       <a href="#http://www.semantichadith.com/ontology/HadithText"
          title="http://www.semantichadith.com/ontology/HadithText">
-         <span>HadithText</span>
+         <span>hadith text</span>
       </a>
    </li>
    <li>
       <a href="#LineBeginning"
          title="http://www.semantictafsir.com/ontology/LineBeginning">
-         <span>LineBeginning</span>
+         <span>line beginning</span>
       </a>
    </li>
    <li>
       <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">
-         <span>Location</span>
+         <span>location</span>
       </a>
    </li>
    <li>
       <a href="#http://www.semantichadith.com/ontology/NarratorChain"
          title="http://www.semantichadith.com/ontology/NarratorChain">
-         <span>NarratorChain</span>
+         <span>narrator chain</span>
       </a>
    </li>
    <li>
       <a href="#http://www.semantichadith.com/ontology/NarratorChainSegment"
          title="http://www.semantichadith.com/ontology/NarratorChainSegment">
-         <span>NarratorChainSegment</span>
+         <span>narrator chain segment</span>
       </a>
    </li>
    <li>
       <a href="#NarratorType"
-         title="http://www.semantictafsir.com/ontology/NarratorType">
-         <span>NarratorType</span>
-      </a>
+         title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
    </li>
    <li>
       <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">
-         <span>Note</span>
+         <span>note</span>
       </a>
    </li>
    <li>
       <a href="#Organization"
          title="http://www.semantictafsir.com/ontology/Organization">
-         <span>Organization</span>
+         <span>organization</span>
       </a>
    </li>
    <li>
       <a href="#Other" title="http://www.semantictafsir.com/ontology/Other">
-         <span>Other</span>
+         <span>other</span>
       </a>
    </li>
    <li>
-      <a href="#http://schema.org/Person" title="http://schema.org/Person">
-         <span>Person</span>
-      </a>
+      <a href="#Person" title="http://www.semantictafsir.com/ontology/Person">Person</a>
    </li>
    <li>
       <a href="#Poetry" title="http://www.semantictafsir.com/ontology/Poetry">
-         <span>Poetry</span>
+         <span>poetry</span>
       </a>
    </li>
    <li>
       <a href="#http://www.semantichadith.com/ontology/RootNarrator"
          title="http://www.semantichadith.com/ontology/RootNarrator">
-         <span>RootNarrator</span>
+         <span>root narrator</span>
       </a>
    </li>
    <li>
       <a href="#http://www.semantichadith.com/ontology/RootNarratorChainSegment"
          title="http://www.semantichadith.com/ontology/RootNarratorChainSegment">
-         <span>RootNarratorChainSegment</span>
+         <span>root narrator chain segment</span>
       </a>
    </li>
    <li>
       <a href="#Section" title="http://www.semantictafsir.com/ontology/Section">
-         <span>Section</span>
+         <span>section</span>
       </a>
    </li>
    <li>
       <a href="#Segment" title="http://www.semantictafsir.com/ontology/Segment">
-         <span>Segment</span>
+         <span>segment</span>
       </a>
    </li>
    <li>
       <a href="#SubSection"
          title="http://www.semantictafsir.com/ontology/SubSection">
-         <span>SubSection</span>
+         <span>sub section</span>
       </a>
    </li>
    <li>
       <a href="#SubTheme" title="http://www.semantictafsir.com/ontology/SubTheme">
-         <span>SubTheme</span>
+         <span>sub theme</span>
       </a>
    </li>
    <li>
       <a href="#Surah" title="http://www.semantictafsir.com/ontology/Surah">
-         <span>Surah</span>
+         <span>surah</span>
       </a>
    </li>
    <li>
       <a href="#TafsirChapter"
          title="http://www.semantictafsir.com/ontology/TafsirChapter">
-         <span>TafsirChapter</span>
+         <span>tafsir chapter</span>
       </a>
    </li>
    <li>
       <a href="#TafsirCollection"
          title="http://www.semantictafsir.com/ontology/TafsirCollection">
-         <span>TafsirCollection</span>
+         <span>tafsir collection</span>
       </a>
    </li>
    <li>
       <a href="#ThematicVerseFragmentReference"
          title="http://www.semantictafsir.com/ontology/ThematicVerseFragmentReference">
-         <span>ThematicVerseFragmentReference</span>
+         <span>thematic verse fragment reference</span>
       </a>
    </li>
    <li>
       <a href="#ThematicVerseReference"
          title="http://www.semantictafsir.com/ontology/ThematicVerseReference">
-         <span>ThematicVerseReference</span>
+         <span>thematic verse reference</span>
       </a>
    </li>
    <li>
       <a href="#Theme" title="http://www.semantictafsir.com/ontology/Theme">
-         <span>Theme</span>
+         <span>theme</span>
       </a>
    </li>
    <li>
       <a href="#Time" title="http://www.semantictafsir.com/ontology/Time">
-         <span>Time</span>
+         <span>time</span>
       </a>
    </li>
    <li>
       <a href="#VerseFragment"
          title="http://www.semantictafsir.com/ontology/VerseFragment">
-         <span>VerseFragment</span>
+         <span>verse fragment</span>
       </a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
@@ -401,7 +402,7 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">
+      <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">
          <span>has part</span>
       </a>
    </li>
@@ -439,7 +440,7 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#http://schema.org/isPartOf" title="http://schema.org/isPartOf">
+      <a href="#isPartOf" title="http://www.semantictafsir.com/ontology/isPartOf">
          <span>is part of</span>
       </a>
    </li>
@@ -608,6 +609,24 @@ This ontology has the following classes and properties.</span>
          <span>has volume no</span>
       </a>
    </li>
+</ul><h4>Named Individuals</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://www.semantictafsir.com/ontology#rawi" title="http://www.semantictafsir.com/ontology#rawi">Rawi</a>
+   </li>
+   <li>
+      <a href="#http://www.semantictafsir.com/ontology#sahabi" title="http://www.semantictafsir.com/ontology#sahabi">Sahabi</a>
+   </li>
+   <li>
+      <a href="#http://www.semantictafsir.com/ontology#shaykh" title="http://www.semantictafsir.com/ontology#shaykh">Shaykh</a>
+   </li>
+   <li>
+      <a href="#http://www.semantictafsir.com/ontology#unknown_rawi"
+         title="http://www.semantictafsir.com/ontology#unknown_rawi">Unknown Rawi</a>
+   </li>
+   <li>
+      <a href="#http://www.semantictafsir.com/ontology#unknown_sahabi"
+         title="http://www.semantictafsir.com/ontology#unknown_sahabi">Unknown Sahabi</a>
+   </li>
 </ul>
 </div>
   
@@ -689,9 +708,7 @@ This section provides details for each class and property defined by The  Semant
       </li>
       <li>
          <a href="#NarratorType"
-            title="http://www.semantictafsir.com/ontology/NarratorType">
-            <span>narrator type</span>
-         </a>
+            title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
       </li>
       <li>
          <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">
@@ -710,9 +727,7 @@ This section provides details for each class and property defined by The  Semant
          </a>
       </li>
       <li>
-         <a href="#http://schema.org/Person" title="http://schema.org/Person">
-            <span>person</span>
-         </a>
+         <a href="#Person" title="http://www.semantictafsir.com/ontology/Person">Person</a>
       </li>
       <li>
          <a href="#Poetry" title="http://www.semantictafsir.com/ontology/Poetry">
@@ -809,6 +824,13 @@ This section provides details for each class and property defined by The  Semant
          <span class="markdown">Represents any additional text that complements the main content, such as footnotes or marginalia.</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">e73 information object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#containsAdditionalText"
@@ -817,7 +839,9 @@ This section provides details for each class and property defined by The  Semant
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -835,7 +859,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -877,6 +901,13 @@ This section provides details for each class and property defined by The  Semant
          <dd/>
          <dd/>
          <dd/>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object">e90 symbolic object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#containsVerse"
@@ -887,7 +918,9 @@ This section provides details for each class and property defined by The  Semant
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -907,7 +940,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -945,7 +978,9 @@ This section provides details for each class and property defined by The  Semant
       <dl class="description">
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -963,7 +998,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1000,6 +1035,13 @@ This section provides details for each class and property defined by The  Semant
          <span class="markdown">Represents the interpretative commentary of the scholars provided in the Tafsir, linked to specific verses or themes</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">e73 information object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#containsCommentary"
@@ -1008,7 +1050,9 @@ This section provides details for each class and property defined by The  Semant
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1026,7 +1070,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1065,7 +1109,9 @@ This section provides details for each class and property defined by The  Semant
       <dl class="description">
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1083,7 +1129,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1120,6 +1166,13 @@ This section provides details for each class and property defined by The  Semant
          <span class="markdown">Represents Hadith narrations referenced in the Tafsir to provide context or explanation of Quranic verses.</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">e73 information object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#http://www.semantichadith.com/ontology/hasHadithText"
@@ -1130,14 +1183,16 @@ This section provides details for each class and property defined by The  Semant
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#http://schema.org/isPartOf" title="http://schema.org/isPartOf">is part of</a>
+            <a href="#isPartOf" title="http://www.semantictafsir.com/ontology/isPartOf">is part of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPartOfHadith"
                title="http://www.semantictafsir.com/ontology/isPartOfHadith">is part of hadith</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/NarratorChain"
@@ -1156,7 +1211,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1195,7 +1250,7 @@ This section provides details for each class and property defined by The  Semant
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="#Person" title="http://www.semantictafsir.com/ontology/Person">Person</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -1235,6 +1290,13 @@ This section provides details for each class and property defined by The  Semant
          <span class="markdown">Refers to the text of a Hadith itself, distinct from its chain of Narrators etc</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">e73 information object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#http://www.semantichadith.com/ontology/hasHadithText"
@@ -1243,7 +1305,9 @@ This section provides details for each class and property defined by The  Semant
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/NarratorChain"
                title="http://www.semantichadith.com/ontology/NarratorChain">narrator chain</a>
@@ -1261,7 +1325,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1300,7 +1364,9 @@ This section provides details for each class and property defined by The  Semant
       <dl class="description">
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1318,7 +1384,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/DatasetLocation">dataset location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1359,9 +1425,18 @@ This section provides details for each class and property defined by The  Semant
          <dd/>
          <dd/>
          <dd/>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E53_Place"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E53_Place">e53 place</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1380,7 +1455,7 @@ This section provides details for each class and property defined by The  Semant
             <sup class="type-c" title="class">c</sup>, <a href="#LineBeginning"
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1433,7 +1508,9 @@ This section provides details for each class and property defined by The  Semant
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1451,7 +1528,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1508,7 +1585,9 @@ This section provides details for each class and property defined by The  Semant
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1526,7 +1605,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1553,19 +1632,45 @@ This section provides details for each class and property defined by The  Semant
       </dl>
    </div>
    <div class="entity" id="NarratorType">
-      <h3>narrator type<sup class="type-c" title="class">c</sup>
+      <h3>Narrator Type<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> http://www.semantictafsir.com/ontology/NarratorType</p>
       <div class="comment">
-         <span class="markdown">Categorises narrators based on their role or reliability in the chain of transmission. Denotes the role or classification of a narrator in the transmission of Tafsir content, including types such as Qari (reciter), Rawi (narrator), Sahabi (companion of the Prophet), Shaykh (learned authority), and Unknown_Rawi (unidentified narrator).</span>
+         <span class="markdown">
+    Categorises narrators based on their role or reliability in the chain of transmission. Denotes the role or classification of a narrator in the transmission of Tafsir content, including types such as Rawi (narrator), Sahabi (companion of the Prophet), Shaykh (learned authority), and Unknown_Rawi (unidentified narrator).
+  </span>
       </div>
       <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>{ <a href="#http://www.semantictafsir.com/ontology#rawi" title="http://www.semantictafsir.com/ontology#rawi">Rawi</a> , <a href="#http://www.semantictafsir.com/ontology#sahabi" title="http://www.semantictafsir.com/ontology#sahabi">Sahabi</a> , <a href="#http://www.semantictafsir.com/ontology#shaykh" title="http://www.semantictafsir.com/ontology#shaykh">Shaykh</a> , <a href="#http://www.semantictafsir.com/ontology#unknown_rawi"
+               title="http://www.semantictafsir.com/ontology#unknown_rawi">Unknown Rawi</a> , <a href="#http://www.semantictafsir.com/ontology#unknown_sahabi"
+               title="http://www.semantictafsir.com/ontology#unknown_sahabi">Unknown Sahabi</a> }</dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E55_Type"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E55_Type">e55 type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://www.semantictafsir.com/ontology#rawi" title="http://www.semantictafsir.com/ontology#rawi">Rawi</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://www.semantictafsir.com/ontology#sahabi" title="http://www.semantictafsir.com/ontology#sahabi">Sahabi</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://www.semantictafsir.com/ontology#shaykh" title="http://www.semantictafsir.com/ontology#shaykh">Shaykh</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://www.semantictafsir.com/ontology#unknown_rawi"
+               title="http://www.semantictafsir.com/ontology#unknown_rawi">Unknown Rawi</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://www.semantictafsir.com/ontology#unknown_sahabi"
+               title="http://www.semantictafsir.com/ontology#unknown_sahabi">Unknown Sahabi</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1620,9 +1725,18 @@ This section provides details for each class and property defined by The  Semant
          <span class="markdown">Contains any notes or annotations made by the author or scholars regarding the text.</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">e73 information object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1642,7 +1756,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Other" title="http://www.semantictafsir.com/ontology/Other">other</a>
@@ -1678,9 +1792,18 @@ This section provides details for each class and property defined by The  Semant
          <span class="markdown">Refers to the extended modern definition of this class to the classical context of religious organizations (Jews, Christians, Muslims), their subgroups (Sunni, Shia, Ismailities), theological school of thoughts (Hanafi, Maliki, Shafi’i, Hanbali), tribes and clans (Hashim, Quraysh), and ethnic groups (Arabs, Greeks, Persians).</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E74_Group"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E74_Group">e74 group</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1700,7 +1823,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Other" title="http://www.semantictafsir.com/ontology/Other">other</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Poetry" title="http://www.semantictafsir.com/ontology/Poetry">poetry</a>
@@ -1737,7 +1860,9 @@ This section provides details for each class and property defined by The  Semant
       <dl class="description">
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1757,7 +1882,7 @@ This section provides details for each class and property defined by The  Semant
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1782,71 +1907,36 @@ This section provides details for each class and property defined by The  Semant
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://schema.org/Person">
-      <h3>person<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="Person">
+      <h3>Person<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://schema.org/Person</p>
+         <strong>IRI:</strong> http://www.semantictafsir.com/ontology/Person</p>
       <div class="comment">
          <span class="markdown">Represents any individual mentioned in the Tafsir, either historical or contemporary. Naming can be a complex process in classical Arab society (comparable to ancient Hebraic naming) (Almuhanna and Prunet, 2019). Full names are made of chains of single names, which can include the name of
 the city where the person was living. Once the full name is mentioned, short forms are usually used throughout the remainder of a text (e.g. Al-Tabari)</span>
       </div>
       <dl class="description">
          <dt>is equivalent to</dt>
-         <dd/>
-         <dd/>
-         <dd/>
+         <dd>en</dd>
+         <dd>en</dd>
+         <dd>en</dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E21_Person"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E21_Person">e21 person</a>
+            <sup class="type-c" title="class">c</sup>, <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>has sub-classes</dt>
          <dd>
             <a href="#http://www.semantichadith.com/ontology/HadithNarrator"
                title="http://www.semantichadith.com/ontology/HadithNarrator">hadith narrator</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
-               title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/NarratorChain"
-               title="http://www.semantichadith.com/ontology/NarratorChain">narrator chain</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/NarratorChainSegment"
-               title="http://www.semantichadith.com/ontology/NarratorChainSegment">narrator chain segment</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#AdditionalText"
-               title="http://www.semantictafsir.com/ontology/AdditionalText">additional text</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#BookLocation"
-               title="http://www.semantictafsir.com/ontology/BookLocation">book location</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Commentary"
-               title="http://www.semantictafsir.com/ontology/Commentary">commentary</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DatasetLocation"
-               title="http://www.semantictafsir.com/ontology/DatasetLocation">dataset location</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#LineBeginning"
-               title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Organization"
-               title="http://www.semantictafsir.com/ontology/Organization">organization</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Other" title="http://www.semantictafsir.com/ontology/Other">other</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Poetry" title="http://www.semantictafsir.com/ontology/Poetry">poetry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Section" title="http://www.semantictafsir.com/ontology/Section">section</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Segment" title="http://www.semantictafsir.com/ontology/Segment">segment</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#SubSection"
-               title="http://www.semantictafsir.com/ontology/SubSection">sub section</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Surah" title="http://www.semantictafsir.com/ontology/Surah">surah</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#TafsirChapter"
-               title="http://www.semantictafsir.com/ontology/TafsirChapter">tafsir chapter</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ThematicVerseFragmentReference"
-               title="http://www.semantictafsir.com/ontology/ThematicVerseFragmentReference">thematic verse fragment reference</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ThematicVerseReference"
-               title="http://www.semantictafsir.com/ontology/ThematicVerseReference">thematic verse reference</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Theme" title="http://www.semantictafsir.com/ontology/Theme">theme</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Time" title="http://www.semantictafsir.com/ontology/Time">time</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Verse" title="http://www.semantictafsir.com/ontology/Verse">Ayah</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#VerseFragment"
-               title="http://www.semantictafsir.com/ontology/VerseFragment">verse fragment</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1862,9 +1952,18 @@ the city where the person was living. Once the full name is mentioned, short for
          <span class="markdown">Represents poetic verses or stanzas referenced within the Tafsir.</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">e73 information object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -1884,7 +1983,7 @@ the city where the person was living. Once the full name is mentioned, short for
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -1970,6 +2069,13 @@ the city where the person was living. Once the full name is mentioned, short for
          <span class="markdown">A major division within the Tafsir, often corresponding to significant thematic breaks.</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object">e90 symbolic object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#isAbout" title="http://www.semantictafsir.com/ontology/isAbout">is about</a>
@@ -1985,7 +2091,9 @@ the city where the person was living. Once the full name is mentioned, short for
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2005,7 +2113,7 @@ the city where the person was living. Once the full name is mentioned, short for
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2041,6 +2149,13 @@ the city where the person was living. Once the full name is mentioned, short for
          <span class="markdown">Represents a smaller portion of a section, focusing on specific verses or themes.</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object">e90 symbolic object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#containsSegment"
@@ -2049,7 +2164,9 @@ the city where the person was living. Once the full name is mentioned, short for
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2069,7 +2186,7 @@ the city where the person was living. Once the full name is mentioned, short for
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2105,6 +2222,13 @@ the city where the person was living. Once the full name is mentioned, short for
          <span class="markdown">A subdivision within a section, allowing for detailed thematic or topical breakdowns.</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object">e90 symbolic object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#containsSubSection"
@@ -2113,7 +2237,9 @@ the city where the person was living. Once the full name is mentioned, short for
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2133,7 +2259,7 @@ the city where the person was living. Once the full name is mentioned, short for
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2201,9 +2327,18 @@ the city where the person was living. Once the full name is mentioned, short for
          <dt>is equivalent to</dt>
          <dd/>
          <dd/>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object">e90 symbolic object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2223,7 +2358,7 @@ the city where the person was living. Once the full name is mentioned, short for
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2259,9 +2394,18 @@ the city where the person was living. Once the full name is mentioned, short for
          <span class="markdown">Denotes a chapter within the Tafsir, organising the commentary into sections. Usually corresponds to the Surahs of the Quran.</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object">e90 symbolic object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2281,7 +2425,7 @@ the city where the person was living. Once the full name is mentioned, short for
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2313,8 +2457,24 @@ the city where the person was living. Once the full name is mentioned, short for
       <p>
          <strong>IRI:</strong> http://www.semantictafsir.com/ontology/TafsirCollection</p>
       <div class="comment">
-         <span class="markdown">Represents the entire compilation of Tafsir works, encompassing all chapters, sections, and interpretations within a particular edition or collection of Tafsir literature. This class organises the Tafsir content as a cohesive set, providing a structured framework for accessing and analysing the exegesis as a whole.</span>
+         <span class="markdown">
+            TafsirCollection may be treated as an LRMoo F1 Work when referring to the abstract
+            intellectual work. Specific editions, manifestations, or individual physical/digital
+            copies should be modeled separately using LRMoo bibliographic entities where needed.
+        </span>
       </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object">e90 symbolic object</a>
+            <sup class="type-c" title="class">c</sup>, <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work"
+               target="_blank"
+               title="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">f1 work</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="ThematicVerseFragmentReference">
       <h3>thematic verse fragment reference<sup class="type-c" title="class">c</sup>
@@ -2329,7 +2489,9 @@ the city where the person was living. Once the full name is mentioned, short for
       <dl class="description">
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2349,7 +2511,7 @@ the city where the person was living. Once the full name is mentioned, short for
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2386,7 +2548,9 @@ the city where the person was living. Once the full name is mentioned, short for
       <dl class="description">
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2406,7 +2570,7 @@ the city where the person was living. Once the full name is mentioned, short for
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2458,7 +2622,9 @@ the city where the person was living. Once the full name is mentioned, short for
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2478,7 +2644,7 @@ the city where the person was living. Once the full name is mentioned, short for
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2515,9 +2681,18 @@ the city where the person was living. Once the full name is mentioned, short for
 words, either only by day name, or sometimes including the month name, and rarely, the year. Also well-known temporal entities, such as the Day of Judgment (Youm Al-Din).</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span">e52 time span</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2537,7 +2712,7 @@ words, either only by day name, or sometimes including the month name, and rarel
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2573,6 +2748,13 @@ words, either only by day name, or sometimes including the month name, and rarel
          <span class="markdown">A part of a Quranic verse that is individually analysed or referenced in the Tafsir.</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+               target="_blank"
+               title="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">e73 information object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#isPartOfVerse"
@@ -2587,7 +2769,9 @@ words, either only by day name, or sometimes including the month name, and rarel
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <a href="http://schema.org/Person"
+               target="_blank"
+               title="http://schema.org/Person">person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/Hadith" title="http://www.semantichadith.com/ontology/Hadith">hadith</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://www.semantichadith.com/ontology/HadithText"
                title="http://www.semantichadith.com/ontology/HadithText">hadith text</a>
@@ -2607,7 +2791,7 @@ words, either only by day name, or sometimes including the month name, and rarel
                title="http://www.semantictafsir.com/ontology/LineBeginning">line beginning</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semantictafsir.com/ontology/Location">location</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NarratorType"
-               title="http://www.semantictafsir.com/ontology/NarratorType">narrator type</a>
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Note" title="http://www.semantictafsir.com/ontology/Note">note</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Organization"
                title="http://www.semantictafsir.com/ontology/Organization">organization</a>
@@ -2741,7 +2925,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          </a>
       </li>
       <li>
-         <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">
+         <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">
             <span>has part</span>
          </a>
       </li>
@@ -2779,7 +2963,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          </a>
       </li>
       <li>
-         <a href="#http://schema.org/isPartOf" title="http://schema.org/isPartOf">
+         <a href="#isPartOf" title="http://www.semantictafsir.com/ontology/isPartOf">
             <span>is part of</span>
          </a>
       </li>
@@ -2854,7 +3038,11 @@ words, either only by day name, or sometimes including the month name, and rarel
       <p>
          <strong>IRI:</strong> http://www.semantictafsir.com/ontology/commentedIn</p>
       <div class="comment">
-         <span class="markdown">Indicates that a specific verse or passage is commented on within a particular section of the Tafsir.</span>
+         <span class="markdown">
+            Domain-specific exegetical relation indicating that a verse or passage is commented on
+            within a Tafsir section. Not reduced to CIDOC CRM because it captures interpretation,
+            not only reference.
+        </span>
       </div>
       <div class="description">
          <dl>
@@ -2885,7 +3073,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">has part</a>
+               <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">has part</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>
@@ -2905,13 +3093,15 @@ words, either only by day name, or sometimes including the month name, and rarel
       <p>
          <strong>IRI:</strong> http://www.semantictafsir.com/ontology/containsCommentary</p>
       <div class="comment">
-         <span class="markdown">Indicates that an entity includes commentary, typically linked to a Quranic verse or thematic discussion.</span>
+         <span class="markdown">
+            Domain-specific property for linking textual structures to Tafsir commentary.
+        </span>
       </div>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">has part</a>
+               <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">has part</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>
@@ -2937,7 +3127,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">has part</a>
+               <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">has part</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>
@@ -2962,7 +3152,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">has part</a>
+               <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">has part</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>
@@ -2987,7 +3177,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">has part</a>
+               <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">has part</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>
@@ -3013,7 +3203,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">has part</a>
+               <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">has part</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>
@@ -3038,7 +3228,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">has part</a>
+               <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">has part</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>
@@ -3106,7 +3296,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">has part</a>
+               <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">has part</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -3176,13 +3366,15 @@ words, either only by day name, or sometimes including the month name, and rarel
       <p>
          <strong>IRI:</strong> http://www.semantichadith.com/ontology/hasNarratorChain</p>
       <div class="comment">
-         <span class="markdown">Links a Hadith to its entire chain of narrators, providing a complete view of its transmission history.</span>
+         <span class="markdown">
+            Domain-specific property linking a Hadith to its ordered narrator chain.
+        </span>
       </div>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/hasPart" title="http://schema.org/hasPart">has part</a>
+               <a href="#hasPart" title="http://www.semantictafsir.com/ontology/hasPart">has part</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -3238,6 +3430,13 @@ words, either only by day name, or sometimes including the month name, and rarel
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P2_has_type">p2 has type</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#http://www.semantichadith.com/ontology/HadithNarrator"
@@ -3257,19 +3456,40 @@ words, either only by day name, or sometimes including the month name, and rarel
       <div class="comment">
          <span class="markdown">Links a piece of text to a corresponding note or annotation, providing additional context or explanation.</span>
       </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.cidoc-crm.org/cidoc-crm/P3_has_note"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P3_has_note">p3 has note</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
-   <div class="entity" id="http://schema.org/hasPart">
+   <div class="entity" id="hasPart">
       <h3>has part<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://schema.org/hasPart</p>
+         <strong>IRI:</strong> http://www.semantictafsir.com/ontology/hasPart</p>
       <div class="comment">
          <span class="markdown">A general property indicating that an entity is composed of other entities, used to organize content within the ontology.</span>
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://schema.org/hasPart"
+                  target="_blank"
+                  title="http://schema.org/hasPart">has part</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of">p106 is composed of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has sub-properties</dt>
             <dd>
                <a href="#containsAdditionalText"
@@ -3324,7 +3544,9 @@ words, either only by day name, or sometimes including the month name, and rarel
       <p>
          <strong>IRI:</strong> http://www.semantichadith.com/ontology/hasRootNarratorSegment</p>
       <div class="comment">
-         <span class="markdown">Links a Hadith to the initial segment of its narrator chain, starting from the root narrator</span>
+         <span class="markdown">
+            Domain-specific property linking a Hadith to the initial segment of its narrator chain.
+        </span>
       </div>
       <div class="description">
          <dl>
@@ -3380,6 +3602,16 @@ words, either only by day name, or sometimes including the month name, and rarel
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term">p127 has broader term</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="http://www.cidoc-crm.org/cidoc-crm/P129_is_about"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P129_is_about">p129 is about</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has sub-properties</dt>
             <dd>
                <a href="#hasSubTheme"
@@ -3402,7 +3634,10 @@ words, either only by day name, or sometimes including the month name, and rarel
       <p>
          <strong>IRI:</strong> http://www.semantichadith.com/ontology/heardFrom</p>
       <div class="comment">
-         <span class="markdown">Indicates the source from which a narrator heard the Hadith, typically another narrator in the chain.</span>
+         <span class="markdown">
+            Domain-specific Hadith transmission relation linking a narrator to the source from whom
+            the Hadith was heard. No direct CRM or LRMoo equivalent is asserted.
+        </span>
       </div>
       <div class="description">
          <dl>
@@ -3439,6 +3674,13 @@ words, either only by day name, or sometimes including the month name, and rarel
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.cidoc-crm.org/cidoc-crm/P129_is_about"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P129_is_about">p129 is about</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#Section" title="http://www.semantictafsir.com/ontology/Section">section</a>
@@ -3453,18 +3695,28 @@ words, either only by day name, or sometimes including the month name, and rarel
          </dl>
       </div>
    </div>
-   <div class="entity" id="http://schema.org/isPartOf">
+   <div class="entity" id="isPartOf">
       <h3>is part of<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://schema.org/isPartOf</p>
+         <strong>IRI:</strong> http://www.semantictafsir.com/ontology/isPartOf</p>
       <div class="comment">
          <span class="markdown">Indicates that an entity is a component of a larger entity, used to establish part-whole relationships.</span>
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://schema.org/isPartOf"
+                  target="_blank"
+                  title="http://schema.org/isPartOf">is part of</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of">p106i forms part of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has sub-properties</dt>
             <dd>
                <a href="#isPartOfHadith"
@@ -3495,7 +3747,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/isPartOf" title="http://schema.org/isPartOf">is part of</a>
+               <a href="#isPartOf" title="http://www.semantictafsir.com/ontology/isPartOf">is part of</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>
@@ -3520,7 +3772,7 @@ words, either only by day name, or sometimes including the month name, and rarel
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://schema.org/isPartOf" title="http://schema.org/isPartOf">is part of</a>
+               <a href="#isPartOf" title="http://www.semantictafsir.com/ontology/isPartOf">is part of</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -3549,6 +3801,13 @@ words, either only by day name, or sometimes including the month name, and rarel
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term">p127i has narrower term</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#SubTheme" title="http://www.semantictafsir.com/ontology/SubTheme">sub theme</a>
@@ -3574,6 +3833,13 @@ words, either only by day name, or sometimes including the month name, and rarel
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by">p67i is referred to by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>is inverse of</dt>
             <dd>
                <a href="#mentions" title="http://www.semantictafsir.com/ontology/mentions">mentions</a>
@@ -3594,6 +3860,13 @@ words, either only by day name, or sometimes including the month name, and rarel
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to">p67 refers to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>is inverse of</dt>
             <dd>
                <a href="#mentionedIn"
@@ -3654,6 +3927,17 @@ words, either only by day name, or sometimes including the month name, and rarel
       <div class="comment">
          <span class="markdown">Links a text or commentary to another text it references, showing the relationship between different parts of the literature.</span>
       </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to">p67 refers to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="refersTo">
       <h3>refers to<sup class="type-op" title="object property">op</sup>
@@ -3667,6 +3951,13 @@ words, either only by day name, or sometimes including the month name, and rarel
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"
+                  target="_blank"
+                  title="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to">p67 refers to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has sub-properties</dt>
             <dd>
                <a href="#http://www.semantichadith.com/ontology/refersToNarrator"
@@ -4044,12 +4335,129 @@ words, either only by day name, or sometimes including the month name, and rarel
          <span class="markdown">Captures the volume number within a multi-volume work, aiding in the identification and location of content across volumes</span>
       </div>
    </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.semantictafsir.com/ontology#rawi" title="http://www.semantictafsir.com/ontology#rawi">Rawi</a>
+      </li>
+      <li>
+         <a href="#http://www.semantictafsir.com/ontology#sahabi" title="http://www.semantictafsir.com/ontology#sahabi">Sahabi</a>
+      </li>
+      <li>
+         <a href="#http://www.semantictafsir.com/ontology#shaykh" title="http://www.semantictafsir.com/ontology#shaykh">Shaykh</a>
+      </li>
+      <li>
+         <a href="#http://www.semantictafsir.com/ontology#unknown_rawi"
+            title="http://www.semantictafsir.com/ontology#unknown_rawi">Unknown Rawi</a>
+      </li>
+      <li>
+         <a href="#http://www.semantictafsir.com/ontology#unknown_sahabi"
+            title="http://www.semantictafsir.com/ontology#unknown_sahabi">Unknown Sahabi</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.semantictafsir.com/ontology#rawi">
+      <h3>Rawi<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semantictafsir.com/ontology#rawi</p>
+      <div class="comment">
+         <span class="markdown">A transmitter of hadith, often from later generations.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#NarratorType"
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.semantictafsir.com/ontology#sahabi">
+      <h3>Sahabi<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semantictafsir.com/ontology#sahabi</p>
+      <div class="comment">
+         <span class="markdown">A companion of the Prophet Muhammad.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#NarratorType"
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.semantictafsir.com/ontology#shaykh">
+      <h3>Shaykh<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semantictafsir.com/ontology#shaykh</p>
+      <div class="comment">
+         <span class="markdown">A scholar or teacher of hadith.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#NarratorType"
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.semantictafsir.com/ontology#unknown_rawi">
+      <h3>Unknown Rawi<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semantictafsir.com/ontology#unknown_rawi</p>
+      <div class="comment">
+         <span class="markdown">A hadith transmitter whose identity is uncertain.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#NarratorType"
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.semantictafsir.com/ontology#unknown_sahabi">
+      <h3>Unknown Sahabi<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semantictafsir.com/ontology#unknown_sahabi</p>
+      <div class="comment">
+         <span class="markdown">A companion of the Prophet whose identity is unknown.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#NarratorType"
+               title="http://www.semantictafsir.com/ontology/NarratorType">Narrator Type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <div   class="entity">
 <sup class="type-c" title="Classes">c</sup>: Classes <br/>
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
 <sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
 </div>
 </div>
 </div>
@@ -4063,8 +4471,10 @@ words, either only by day name, or sometimes including the month name, and rarel
   <span class="markdown">
     Kamran, Amna Binte, Bushra Abro, and Amna Basharat. "SemanticHadith: An ontology-driven knowledge graph for the hadith corpus."
     <i>Journal of Web Semantics</i> 78 (2023): 100797. https://doi.org/10.1016/j.websem.2023.100797<br><br>
-    
   </span>
+<span class="markdown">
+	Kamran, Amna Binte, Nigar Azhar Butt, and Amna Basharat. "Semantic Enrichment of Hadith Corpus—Knowledge Graph Generation From Islamic Text." <i>Semantic Web</i> 17, no. 2 (2026): 22104968261431425.
+</span>
 </div>
 
 </div>
